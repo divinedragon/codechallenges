@@ -93,7 +93,6 @@ public class NumberToTextConverter {
 
         String convertedTextDollar = convertToText(number);
 
-
         convertedTextDollar += "Dollar";
 
         return ((number != 1) ? convertedTextDollar + "s" : convertedTextDollar);
