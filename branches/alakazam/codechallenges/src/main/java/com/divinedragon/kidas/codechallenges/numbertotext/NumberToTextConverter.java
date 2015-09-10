@@ -1,4 +1,4 @@
-package com.divinedragon.kidas.codechallenges.numbertotext.deepak;
+package com.divinedragon.kidas.codechallenges.numbertotext;
 
 public class NumberToTextConverter {
 
