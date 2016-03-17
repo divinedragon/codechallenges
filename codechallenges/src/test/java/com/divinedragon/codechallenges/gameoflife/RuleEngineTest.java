@@ -1,8 +1,10 @@
-package com.divinedragon.kidas.codechallenges.gameoflife;
+package com.divinedragon.codechallenges.gameoflife;
 
-import org.testng.annotations.Test;
 import org.springframework.util.Assert;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.divinedragon.codechallenges.gameoflife.RuleEngine;
 
 public class RuleEngineTest {
 
@@ -16,8 +18,8 @@ public class RuleEngineTest {
     @Test
     public void isAliveInNextGenerationRule1() {
         Assert.isTrue(fixture.isAliveInNextGeneration(true, -1) == false);
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 0)  == false);
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 1)  == false);
+        Assert.isTrue(fixture.isAliveInNextGeneration(true, 0) == false);
+        Assert.isTrue(fixture.isAliveInNextGeneration(true, 1) == false);
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.divinedragon.kidas.codechallenges.numbertotext;
+package com.divinedragon.codechallenges.numbertotext;
 
 public class NumberToTextConverter {
 
@@ -104,14 +104,14 @@ public class NumberToTextConverter {
         String convertedText = "";
 
         long value = number;
-        long base  = 0;
+        long base = 0;
 
         while (value != 0) {
 
             if (value < 20) {
                 base = value;
                 convertedText += getNumericText(value);
-            }  else if (value < 100) {
+            } else if (value < 100) {
                 base = 10;
                 convertedText += getNumericText(value - (value % base));
             } else if (value < 1000) {

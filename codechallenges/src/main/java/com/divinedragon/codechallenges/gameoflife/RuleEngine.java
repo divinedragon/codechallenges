@@ -1,4 +1,4 @@
-package com.divinedragon.kidas.codechallenges.gameoflife;
+package com.divinedragon.codechallenges.gameoflife;
 
 public class RuleEngine {
 

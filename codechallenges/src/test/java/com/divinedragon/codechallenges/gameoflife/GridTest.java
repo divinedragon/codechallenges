@@ -1,9 +1,9 @@
-package com.divinedragon.kidas.codechallenges.gameoflife;
+package com.divinedragon.codechallenges.gameoflife;
 
+import static org.mockito.Matchers.anyBoolean;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.anyBoolean;
-import static org.mockito.Mockito.anyInt;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
@@ -12,6 +12,9 @@ import org.mockito.stubbing.Answer;
 import org.springframework.util.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.divinedragon.codechallenges.gameoflife.Grid;
+import com.divinedragon.codechallenges.gameoflife.RuleEngine;
 
 public class GridTest {
 
@@ -32,19 +35,20 @@ public class GridTest {
 
         fixture = new Grid(fixtureRows, fixtureCols, ruleEngine);
 
-        /* We will test for following grid
-         * - x - 
-           - x - 
-           - x - 
-
-           (0,0) -> 2       (0,1) -> 1      (0,2) -> 2
-           (1,0) -> 3       (1,1) -> 2      (1,2) -> 3
-           (2,0) -> 2       (2,1) -> 1      (2,2) -> 2
+        /*
+         * We will test for following grid - x - - x - - x - (0,0) -> 2 (0,1) -> 1 (0,2) -> 2 (1,0) -> 3 (1,1) -> 2
+         * (1,2) -> 3 (2,0) -> 2 (2,1) -> 1 (2,2) -> 2
          */
 
-        fixture.setState(0, 0, false); fixture.setState(0, 1, true); fixture.setState(0, 2, false);
-        fixture.setState(1, 0, false); fixture.setState(1, 1, true); fixture.setState(1, 2, false);
-        fixture.setState(2, 0, false); fixture.setState(2, 1, true); fixture.setState(2, 2, false);
+        fixture.setState(0, 0, false);
+        fixture.setState(0, 1, true);
+        fixture.setState(0, 2, false);
+        fixture.setState(1, 0, false);
+        fixture.setState(1, 1, true);
+        fixture.setState(1, 2, false);
+        fixture.setState(2, 0, false);
+        fixture.setState(2, 1, true);
+        fixture.setState(2, 2, false);
 
         when(ruleEngine.isAliveInNextGeneration(anyBoolean(), anyInt())).thenAnswer(
                 new Answer<Boolean>() {
@@ -57,9 +61,9 @@ public class GridTest {
 
                         boolean isAlive = false;
 
-
-                        /* Check if the Current Cell is Alive or Dead.
-                         * Rule 1, 2 and 3 are applicable when the current cell is alive
+                        /*
+                         * Check if the Current Cell is Alive or Dead. Rule 1, 2 and 3 are applicable when the current
+                         * cell is alive
                          */
                         if (isAliveInCurrentGeneration) {
 
@@ -83,25 +87,25 @@ public class GridTest {
 
                         return isAlive;
                     }
-                    
+
                 });
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGridInvalidRows() {
-        new Grid (-1, fixtureCols, ruleEngine);
+        new Grid(-1, fixtureCols, ruleEngine);
         fail("Invalid Grid Rows accepted");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGridInvalidCols() {
-        new Grid (fixtureRows, -1, ruleEngine);
+        new Grid(fixtureRows, -1, ruleEngine);
         fail("Invalid Grid Cols accepted");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGridNullRuleEngine() {
-        new Grid (fixtureRows, fixtureCols, null);
+        new Grid(fixtureRows, fixtureCols, null);
         fail("Null RuleEngine accepted");
     }
 
@@ -111,25 +115,25 @@ public class GridTest {
         assertEquals(fixtureCols, fixture.getCols());
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testSetStateInvalidRowIndexLowerLimit() {
         fixture.setState(-1, 0, true);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testSetStateInvalidRowIndexHigherLimit() {
         fixture.setState(3, 0, true);
         fail("Invalid Row Index (Higher) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testSetStateInvalidColIndexLowerLimit() {
         fixture.setState(0, -1, true);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testSetStateInvalidColIndexHigherLimit() {
         fixture.setState(0, 3, true);
         fail("Invalid Row Index (Higher) is processed");
@@ -141,49 +145,49 @@ public class GridTest {
         Assert.isTrue(fixture.getState(0, 0), "Valid setState not saved");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetStateInvalidRowIndexLowerLimit() {
         fixture.getState(-1, 0);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetStateInvalidRowIndexHigherLimit() {
         fixture.getState(3, 0);
         fail("Invalid Row Index (Higher) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetStateInvalidColIndexLowerLimit() {
         fixture.getState(0, -1);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetStateInvalidColIndexHigherLimit() {
         fixture.getState(0, 3);
         fail("Invalid Row Index (Higher) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetAliveNeighbourCountInvalidRowIndexLowerLimit() {
         fixture.getAliveNeighbourCount(-1, 0);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetAliveNeighbourCountInvalidRowIndexHigherLimit() {
         fixture.getAliveNeighbourCount(3, 0);
         fail("Invalid Row Index (Higher) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetAliveNeighbourCountInvalidColIndexLowerLimit() {
         fixture.getAliveNeighbourCount(0, -1);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetAliveNeighbourCountInvalidColIndexHigherLimit() {
         fixture.getAliveNeighbourCount(0, 3);
         fail("Invalid Row Index (Higher) is processed");
@@ -214,25 +218,25 @@ public class GridTest {
                 "Alive Neighbour Count is incorrect. (2,2)");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetNextGenerationStateInvalidRowIndexLowerLimit() {
         fixture.getNextGenerationState(-1, 0);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetNextGenerationStateInvalidRowIndexHigherLimit() {
         fixture.getNextGenerationState(3, 0);
         fail("Invalid Row Index (Higher) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetNextGenerationStateInvalidColIndexLowerLimit() {
         fixture.getNextGenerationState(0, -1);
         fail("Invalid Row Index (Lower) is processed");
     }
 
-    @Test(expectedExceptions = { IllegalArgumentException.class })
+    @Test(expectedExceptions = {IllegalArgumentException.class})
     public void testGetNextGenerationStateInvalidColIndexHigherLimit() {
         fixture.getNextGenerationState(0, 3);
         fail("Invalid Row Index (Higher) is processed");
@@ -266,19 +270,16 @@ public class GridTest {
     @Test
     public void testNextGenerationExample1() {
 
-        /* Scenario - Input
-         * x x 
-           x x 
-
-           Scenario - Output
-           x x 
-           x x
+        /*
+         * Scenario - Input x x x x Scenario - Output x x x x
          */
 
         Grid example = new Grid(2, 2, fixture.getRuleEngine());
 
-        example.setState(0, 0, true); example.setState(0, 1, true);
-        example.setState(1, 0, true); example.setState(1, 1, true);
+        example.setState(0, 0, true);
+        example.setState(0, 1, true);
+        example.setState(1, 0, true);
+        example.setState(1, 1, true);
 
         Grid exampleNextGeneration = example.nextGeneration();
 
@@ -297,22 +298,21 @@ public class GridTest {
     @Test
     public void testNextGenerationExample2() {
 
-        /* Scenario - Input
-         * x x -
-           x - x
-           - x -
-
-           Scenario - Output
-           x x -
-           x - x
-           - x -
+        /*
+         * Scenario - Input x x - x - x - x - Scenario - Output x x - x - x - x -
          */
 
         Grid example = new Grid(3, 3, fixture.getRuleEngine());
 
-        example.setState(0, 0, true);   example.setState(0, 1, true);   example.setState(0, 2, false);
-        example.setState(1, 0, true);   example.setState(1, 1, false);  example.setState(1, 2, true);
-        example.setState(2, 0, false);  example.setState(2, 1, true);   example.setState(2, 2, false);
+        example.setState(0, 0, true);
+        example.setState(0, 1, true);
+        example.setState(0, 2, false);
+        example.setState(1, 0, true);
+        example.setState(1, 1, false);
+        example.setState(1, 2, true);
+        example.setState(2, 0, false);
+        example.setState(2, 1, true);
+        example.setState(2, 2, false);
 
         Grid exampleNextGeneration = example.nextGeneration();
 
@@ -341,22 +341,21 @@ public class GridTest {
     @Test
     public void testNextGenerationExample3() {
 
-        /* Scenario - Input
-         * - x -
-           - x -
-           - x -
-
-           Scenario - Output
-           - - -
-           x x x
-           - - -
+        /*
+         * Scenario - Input - x - - x - - x - Scenario - Output - - - x x x - - -
          */
 
         Grid example = new Grid(3, 3, fixture.getRuleEngine());
 
-        example.setState(0, 0, false);  example.setState(0, 1, true);   example.setState(0, 2, false);
-        example.setState(1, 0, false);  example.setState(1, 1, true);   example.setState(1, 2, false);
-        example.setState(2, 0, false);  example.setState(2, 1, true);   example.setState(2, 2, false);
+        example.setState(0, 0, false);
+        example.setState(0, 1, true);
+        example.setState(0, 2, false);
+        example.setState(1, 0, false);
+        example.setState(1, 1, true);
+        example.setState(1, 2, false);
+        example.setState(2, 0, false);
+        example.setState(2, 1, true);
+        example.setState(2, 2, false);
 
         Grid exampleNextGeneration = example.nextGeneration();
 
@@ -385,25 +384,28 @@ public class GridTest {
     @Test
     public void testNextGenerationExample4() {
 
-        /* Scenario - Input
-         * - - - -
-           - x x x
-           x x x -
-           - - - -
-
-           Scenario - Output
-           - - x -
-           x - - x
-           x - - x
-           - x - -
+        /*
+         * Scenario - Input - - - - - x x x x x x - - - - - Scenario - Output - - x - x - - x x - - x - x - -
          */
 
         Grid example = new Grid(4, 4, fixture.getRuleEngine());
 
-        example.setState(0, 0, false);  example.setState(0, 1, false);  example.setState(0, 2, false);   example.setState(0, 3, false);
-        example.setState(1, 0, false);  example.setState(1, 1, true);   example.setState(1, 2, true);    example.setState(1, 3, true);
-        example.setState(2, 0, true);   example.setState(2, 1, true);   example.setState(2, 2, true);    example.setState(2, 3, false);
-        example.setState(3, 0, false);  example.setState(3, 1, false);  example.setState(3, 2, false);   example.setState(3, 3, false);
+        example.setState(0, 0, false);
+        example.setState(0, 1, false);
+        example.setState(0, 2, false);
+        example.setState(0, 3, false);
+        example.setState(1, 0, false);
+        example.setState(1, 1, true);
+        example.setState(1, 2, true);
+        example.setState(1, 3, true);
+        example.setState(2, 0, true);
+        example.setState(2, 1, true);
+        example.setState(2, 2, true);
+        example.setState(2, 3, false);
+        example.setState(3, 0, false);
+        example.setState(3, 1, false);
+        example.setState(3, 2, false);
+        example.setState(3, 3, false);
 
         Grid exampleNextGeneration = example.nextGeneration();
 
@@ -447,25 +449,28 @@ public class GridTest {
     @Test
     public void testNextGenerationExample5() {
 
-        /* Scenario - Input
-         * - - x -
-           x - - x
-           x - - x
-           - x - -
-
-           Scenario - Output
-           - - - -
-           - x x x
-           x x x -
-           - - - -
+        /*
+         * Scenario - Input - - x - x - - x x - - x - x - - Scenario - Output - - - - - x x x x x x - - - - -
          */
 
         Grid example = new Grid(4, 4, fixture.getRuleEngine());
 
-        example.setState(0, 0, false);  example.setState(0, 1, false);  example.setState(0, 2, true);    example.setState(0, 3, false);
-        example.setState(1, 0, true);   example.setState(1, 1, false);  example.setState(1, 2, false);   example.setState(1, 3, true);
-        example.setState(2, 0, true);   example.setState(2, 1, false);  example.setState(2, 2, false);   example.setState(2, 3, true);
-        example.setState(3, 0, false);  example.setState(3, 1, true);   example.setState(3, 2, false);   example.setState(3, 3, false);
+        example.setState(0, 0, false);
+        example.setState(0, 1, false);
+        example.setState(0, 2, true);
+        example.setState(0, 3, false);
+        example.setState(1, 0, true);
+        example.setState(1, 1, false);
+        example.setState(1, 2, false);
+        example.setState(1, 3, true);
+        example.setState(2, 0, true);
+        example.setState(2, 1, false);
+        example.setState(2, 2, false);
+        example.setState(2, 3, true);
+        example.setState(3, 0, false);
+        example.setState(3, 1, true);
+        example.setState(3, 2, false);
+        example.setState(3, 3, false);
 
         Grid exampleNextGeneration = example.nextGeneration();
 

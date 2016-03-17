@@ -1,4 +1,4 @@
-package com.divinedragon.kidas.codechallenges.projecteuler.problem3;
+package com.divinedragon.codechallenges.projecteuler.problem3;
 
 public class LargestPrimeFactor {
 
@@ -15,7 +15,7 @@ public class LargestPrimeFactor {
         /* If the Number is divisible by 2, we will divide it till it can be divided by 2 */
         if (value % 2 == 0) {
             largestPrimeFactor = 2;
-            
+
             while (value % 2 == 0) {
                 value = value / 2;
             }
@@ -30,7 +30,7 @@ public class LargestPrimeFactor {
                 largestPrimeFactor = factor;
 
                 while (value % factor == 0) {
-                    value = value / factor; 
+                    value = value / factor;
                 }
             }
 

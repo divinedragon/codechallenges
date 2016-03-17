@@ -1,7 +1,9 @@
-package com.divinedragon.kidas.codechallenges.projecteuler.problem2;
+package com.divinedragon.codechallenges.projecteuler.problem2;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.divinedragon.codechallenges.projecteuler.problem2.EvenFibonacciNumbers;
 
 public class EvenFibonacciNumbersTest {
 

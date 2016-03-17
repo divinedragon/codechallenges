@@ -1,4 +1,4 @@
-package com.divinedragon.kidas.codechallenges.gameoflife;
+package com.divinedragon.codechallenges.gameoflife;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class GameOfLife {
         RuleEngine ruleEngine = new RuleEngine();
 
         List<Grid> grids = new ArrayList<Grid>(totalPatterns);
-        
+
         for (int i = 0; i < totalPatterns; i++) {
             String gridSizeLine = input.readLine();
             int gridRows = Integer.parseInt(gridSizeLine.split(" ")[0]);
@@ -36,7 +36,6 @@ public class GameOfLife {
             grids.add(grid);
         }
 
-        
         for (Grid grid : grids) {
             System.out.println("Initial Generation");
             grid.print();
