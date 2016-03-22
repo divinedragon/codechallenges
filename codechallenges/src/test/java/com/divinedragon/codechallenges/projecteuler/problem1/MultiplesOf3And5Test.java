@@ -1,21 +1,26 @@
 package com.divinedragon.codechallenges.projecteuler.problem1;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertTrue;
 
-import com.divinedragon.codechallenges.projecteuler.problem1.MultiplesOf3And5;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class MultiplesOf3And5Test {
 
-    @Test
-    public void getSumOfMultiples3And5LessThan10() {
-        Assert.assertTrue(23 == MultiplesOf3And5.getSumOfMultiples(new int[] {3, 5}, 10),
-                "Incorrect Sum of Multiples of 3 and 5 Below 10");
+    @DataProvider(name = "testcases")
+    public Object[][] testCases() {
+        return new Object[][] {
+            { new int[] {3, 5}, new Integer(10), new Integer(23) },
+            { new int[] {3, 5}, new Integer(1000), new Integer(233168) }
+        };
     }
 
-    @Test
-    public void getSumOfMultiples3And5LessThan1000() {
-        Assert.assertTrue(233168 == MultiplesOf3And5.getSumOfMultiples(new int[] {3, 5}, 1000),
-                "Incorrect Sum of Multiples of 3 and 5 Below 1000");
+    @Test(dataProvider = "testcases")
+    public void getSumOfMultiples3And5LessThan10(
+            final int[] multipliers,
+            final Integer numberList,
+            final Integer expectedResult) {
+        assertTrue(expectedResult == MultiplesOf3And5.getSumOfMultiples(multipliers, numberList),
+                "Incorrect Sum of Multiples of 3 and 5 Below 10");
     }
 }

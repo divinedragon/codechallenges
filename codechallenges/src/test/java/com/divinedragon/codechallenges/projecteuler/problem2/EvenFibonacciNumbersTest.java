@@ -1,23 +1,24 @@
 package com.divinedragon.codechallenges.projecteuler.problem2;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertTrue;
 
-import com.divinedragon.codechallenges.projecteuler.problem2.EvenFibonacciNumbers;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class EvenFibonacciNumbersTest {
 
-    @Test
-    public void getEvenFibonacciNumberSumMaxValue10() {
-
-        Assert.assertTrue(4613732 == EvenFibonacciNumbers.getEvenFibonacciNumberSum(4000000),
-                "Sum of Even Valued Fibonacci Numbers less than 20 is incorrect");
+    @DataProvider(name = "testcases")
+    public Object[][] testCases() {
+        return new Object[][] {
+            {new Integer(4000000), new Integer(4613732)}
+        };
     }
 
-    @Test
-    public void getEvenFibonacciNumberSumMaxValue4Million() {
-
-        Assert.assertTrue(4613732 == EvenFibonacciNumbers.getEvenFibonacciNumberSum(4000000),
+    @Test(dataProvider = "testcases")
+    public void getEvenFibonacciNumberSumMaxValue10(
+            final Integer maxValue,
+            final Integer expectedResult) {
+        assertTrue(expectedResult == EvenFibonacciNumbers.getEvenFibonacciNumberSum(maxValue),
                 "Sum of Even Valued Fibonacci Numbers less than 20 is incorrect");
     }
 }

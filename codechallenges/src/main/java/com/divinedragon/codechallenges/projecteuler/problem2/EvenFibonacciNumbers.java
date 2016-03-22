@@ -15,8 +15,6 @@ public class EvenFibonacciNumbers {
         long current = 2L;
         long next = 0L;
 
-        System.out.print("Fibonacci Numbers --> " + previous + " " + current);
-
         while (true) {
 
             next = current + previous;
@@ -27,13 +25,11 @@ public class EvenFibonacciNumbers {
                 break;
             }
 
-            System.out.print(" " + next);
             if (next % 2 == 0) {
                 sum += next;
             }
         }
 
-        System.out.println();
         return sum;
     }
 }

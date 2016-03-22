@@ -30,14 +30,6 @@ public final class SieveOfEratosthenes {
         }
     }
 
-    public static void main(String[] args) {
-        int limit = 1000;
-        int[] myPrimes = getPrimes(limit);
-        for (int i = 0; i < limit; i++) {
-            System.out.println(myPrimes[i]);
-        }
-    }
-
     public static int[] getPrimes(int limit) {
 
         if (limit > MAX) {
