@@ -15,10 +15,10 @@ public class EvenFibonacciNumbersTest {
     }
 
     @Test(dataProvider = "testcases")
-    public void getEvenFibonacciNumberSumMaxValue10(
+    public void getEvenFibonacciNumberSumMaxValue(
             final Integer maxValue,
             final Integer expectedResult) {
         assertTrue(expectedResult == EvenFibonacciNumbers.getEvenFibonacciNumberSum(maxValue),
-                "Sum of Even Valued Fibonacci Numbers less than 20 is incorrect");
+                "Sum of Even Valued Fibonacci Numbers is incorrect");
     }
 }
