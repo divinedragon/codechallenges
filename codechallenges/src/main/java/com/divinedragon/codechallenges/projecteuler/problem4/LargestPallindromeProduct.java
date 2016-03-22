@@ -2,7 +2,7 @@ package com.divinedragon.codechallenges.projecteuler.problem4;
 
 import org.springframework.util.Assert;
 
-public class LargestPallindomeProduct {
+public class LargestPallindromeProduct {
 
     public static void main(String[] args) {
 
@@ -30,8 +30,6 @@ public class LargestPallindomeProduct {
 
         long maxProduct = 0L;
 
-        int checks = 0;
-
         for (value1 = maxValue; value1 >= minValue; value1--) {
 
             for (value2 = value1; value2 <= maxValue; value2++) {
@@ -42,8 +40,6 @@ public class LargestPallindomeProduct {
                     productStr = product + "";
                     productStrReverse = new StringBuilder(productStr).reverse().toString();
 
-                    // System.out.println(value1 + " x " + value2 + " => " + productStr);
-                    checks++;
                     if (productStr.equals(productStrReverse)) {
                         maxProduct = product;
                     }
@@ -51,7 +47,6 @@ public class LargestPallindomeProduct {
             }
         }
 
-        // System.out.println("Total Checks -> " + checks);
         return maxProduct;
     }
 }
