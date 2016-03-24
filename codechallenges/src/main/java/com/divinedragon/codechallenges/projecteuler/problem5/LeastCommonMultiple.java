@@ -7,8 +7,12 @@ public class LeastCommonMultiple {
     private static final int[] PRIMES = SieveOfEratosthenes.getPrimes(1000);
 
     public static void main(String[] args) {
+        System.out.println(leastCommonMultiple(10));
+        System.out.println(leastCommonMultiple(20));
+    }
 
-        int number = 20;
+    public static int leastCommonMultiple(final int number) {
+
         int lcdValue = 1;
         int counter = 0;
 
@@ -30,6 +34,6 @@ public class LeastCommonMultiple {
             counter++;
         }
 
-        System.out.println(lcdValue);
+        return lcdValue;
     }
 }
