@@ -1,13 +1,13 @@
-package problem0005;
+package projecteuler.problem0001;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0005.LeastCommonMultiple;
+import projecteuler.problem0001.Problem0005_LeastCommonMultiple;
 
-public class LeastCommonMultipleTest {
+public class Problem0005_LeastCommonMultipleTest {
 
     @DataProvider(name = "testcases")
     public Object[][] testcases() {
@@ -20,6 +20,6 @@ public class LeastCommonMultipleTest {
     @Test(dataProvider = "testcases")
     public void testLeastCommonMultiple(final int number, final int expectedResult) {
 
-        assertTrue(expectedResult == LeastCommonMultiple.leastCommonMultiple(number), "LCD calculated incorrect");
+        assertTrue(expectedResult == Problem0005_LeastCommonMultiple.leastCommonMultiple(number), "LCD calculated incorrect");
     }
 }

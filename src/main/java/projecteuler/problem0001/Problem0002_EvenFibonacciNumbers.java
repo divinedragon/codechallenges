@@ -1,6 +1,6 @@
-package projecteuler.problem0002;
+package projecteuler.problem0001;
 
-public class EvenFibonacciNumbers {
+public class Problem0002_EvenFibonacciNumbers {
 
     public static void main(String[] args) {
         System.out.println("Sum of Even Fibonacci Numbers - " + getEvenFibonacciNumberSum(20));

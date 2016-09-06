@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day05;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Loops {
+public class Day05_Loops {
 
     static {
         String input = "2";

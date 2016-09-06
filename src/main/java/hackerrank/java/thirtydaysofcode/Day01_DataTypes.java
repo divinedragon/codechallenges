@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day01;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class DataTypes {
+public class Day01_DataTypes {
 
     static {
         String input = "12\n4.0\nis the best place to learn and practice coding!";

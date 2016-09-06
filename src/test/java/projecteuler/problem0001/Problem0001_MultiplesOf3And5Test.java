@@ -5,9 +5,9 @@ import static org.testng.Assert.assertTrue;
     import org.testng.annotations.DataProvider;
     import org.testng.annotations.Test;
 
-import projecteuler.problem0001.MultiplesOf3And5;
+import projecteuler.problem0001.Problem0001_MultiplesOf3And5;
     
-    public class MultiplesOf3And5Test {
+    public class Problem0001_MultiplesOf3And5Test {
     
         @DataProvider(name = "testcases")
         public Object[][] testCases() {
@@ -22,7 +22,7 @@ import projecteuler.problem0001.MultiplesOf3And5;
                 final int[] multipliers,
                 final Integer numberList,
                 final Integer expectedResult) {
-            assertTrue(expectedResult == MultiplesOf3And5.getSumOfMultiples(multipliers, numberList),
+            assertTrue(expectedResult == Problem0001_MultiplesOf3And5.getSumOfMultiples(multipliers, numberList),
                     "Incorrect Sum of Multiples of 3 and 5 Below 10");
         }
     }

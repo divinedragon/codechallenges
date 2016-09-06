@@ -1,6 +1,6 @@
-package projecteuler.problem0006;
+package projecteuler.problem0001;
 
-public class NaturalNumbers {
+public class Problem0006_NaturalNumbers {
 
     public static void main(String[] args) {
         System.out.println(problem6(10));

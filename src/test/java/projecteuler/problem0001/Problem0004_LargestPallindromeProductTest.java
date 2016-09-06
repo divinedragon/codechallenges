@@ -1,13 +1,13 @@
-package projecteuler.problem0004;
+package projecteuler.problem0001;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0004.LargestPallindromeProduct;
+import projecteuler.problem0001.Problem0004_LargestPallindromeProduct;
 
-public class LargestPalindromeProductTest {
+public class Problem0004_LargestPallindromeProductTest {
 
     @DataProvider(name = "testcases")
     public Object[][] testCases() {
@@ -22,7 +22,7 @@ public class LargestPalindromeProductTest {
             final Integer numberOfDigits,
             final Integer expectedResult) {
 
-        assertTrue(expectedResult == LargestPallindromeProduct.getLargestPallindromeProduct(
+        assertTrue(expectedResult == Problem0004_LargestPallindromeProduct.getLargestPallindromeProduct(
                 numberOfDigits), "Largest Pallindrome calculated incorrectly");
     }
 }

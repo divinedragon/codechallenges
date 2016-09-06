@@ -1,4 +1,4 @@
-package projecteuler.problem0003;
+package projecteuler.problem0001;
 
 public final class SieveOfEratosthenes {
 

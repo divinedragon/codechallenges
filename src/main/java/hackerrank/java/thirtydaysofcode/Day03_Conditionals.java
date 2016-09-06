@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day03;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Conditionals {
+public class Day03_Conditionals {
 
     static {
         String input = "3";

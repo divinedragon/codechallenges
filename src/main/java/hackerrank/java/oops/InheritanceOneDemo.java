@@ -1,4 +1,4 @@
-package hackerrank.java.oops.inheritance01;
+package hackerrank.java.oops;
 
 public class InheritanceOneDemo {
 

@@ -1,13 +1,13 @@
-package projecteuler.problem0006;
+package projecteuler.problem0001;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0006.NaturalNumbers;
+import projecteuler.problem0001.Problem0006_NaturalNumbers;
 
-public class NaturalNumberTest {
+public class Problem0006_NaturalNumbersTest {
 
     @DataProvider(name = "testcases")
     public Object[][] testcases() {
@@ -19,7 +19,7 @@ public class NaturalNumberTest {
 
     @Test(dataProvider = "testcases")
     public void testNaturalNumberProblem6(final int limit, final int expectedResult) {
-        assertTrue(expectedResult == NaturalNumbers.problem6(limit),
+        assertTrue(expectedResult == Problem0006_NaturalNumbers.problem6(limit),
                 "Calculation is incorrect");
     }
 }

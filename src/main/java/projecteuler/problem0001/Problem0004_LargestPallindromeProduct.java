@@ -1,8 +1,8 @@
-package projecteuler.problem0004;
+package projecteuler.problem0001;
 
 import org.springframework.util.Assert;
 
-public class LargestPallindromeProduct {
+public class Problem0004_LargestPallindromeProduct {
 
     public static void main(String[] args) {
 
