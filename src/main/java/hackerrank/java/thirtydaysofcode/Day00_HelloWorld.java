@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day00;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class HelloWorld {
+public class Day00_HelloWorld {
 
     static {
         String input = "Welcome to 30 Days of Code!";

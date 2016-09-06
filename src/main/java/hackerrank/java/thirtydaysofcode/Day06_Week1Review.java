@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day06;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Week1Review {
+public class Day06_Week1Review {
 
     static {
         String input = "2\nHacker\nRank\n";

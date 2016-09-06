@@ -1,6 +1,6 @@
-package projecteuler.problem0003;
+package projecteuler.problem0001;
 
-public class LargestPrimeFactor {
+public class Problem0003_LargestPrimeFactor {
 
     public static void main(String[] args) {
         System.out.println(getLargestPrimeFactor(600851475143L));

@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day04;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class ClassVsInstance {
+public class Day04_ClassVsInstance {
 
     static {
         String input = "4\n-1\n10\n16\n18";

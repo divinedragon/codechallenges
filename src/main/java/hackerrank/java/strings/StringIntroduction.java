@@ -1,4 +1,4 @@
-package hackerrank.java.strings.introduction;
+package hackerrank.java.strings;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;

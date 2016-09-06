@@ -1,9 +1,9 @@
-package hackerrank.java.thirtydaysofcode.day02;
+package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Operators {
+public class Day02_Operators {
 
     static {
         String input = "12.00\n20\n8";

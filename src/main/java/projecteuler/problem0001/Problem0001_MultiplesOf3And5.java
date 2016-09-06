@@ -1,6 +1,6 @@
 package projecteuler.problem0001;
 
-public class MultiplesOf3And5 {
+public class Problem0001_MultiplesOf3And5 {
 
     public static void main(String[] args) {
 

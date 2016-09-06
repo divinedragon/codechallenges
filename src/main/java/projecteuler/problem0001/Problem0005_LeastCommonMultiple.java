@@ -1,8 +1,6 @@
-package projecteuler.problem0005;
+package projecteuler.problem0001;
 
-import projecteuler.problem0003.SieveOfEratosthenes;
-
-public class LeastCommonMultiple {
+public class Problem0005_LeastCommonMultiple {
 
     private static final int[] PRIMES = SieveOfEratosthenes.getPrimes(1000);
 

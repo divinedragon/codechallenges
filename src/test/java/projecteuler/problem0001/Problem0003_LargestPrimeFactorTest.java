@@ -1,4 +1,4 @@
-package projecteuler.problem0003;
+package projecteuler.problem0001;
 
 import static org.testng.Assert.assertTrue;
 
@@ -6,10 +6,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0003.LargestPrimeFactor;
+import projecteuler.problem0001.Problem0003_LargestPrimeFactor;
 
 @Parameters
-public class LargestPrimeFactorTest {
+public class Problem0003_LargestPrimeFactorTest {
 
     @DataProvider(name = "testcases")
     public Object[][] testCases() {
@@ -21,7 +21,7 @@ public class LargestPrimeFactorTest {
 
     @Test(dataProvider = "testcases")
     public void testGetLargestPrimeFactor(final Long number, final Integer expectedResult) {
-        assertTrue(expectedResult == LargestPrimeFactor.getLargestPrimeFactor(number),
+        assertTrue(expectedResult == Problem0003_LargestPrimeFactor.getLargestPrimeFactor(number),
                 "Calculation not correct");
     }
 }
