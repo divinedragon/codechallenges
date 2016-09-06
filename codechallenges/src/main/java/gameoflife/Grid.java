@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.gameoflife;
+package gameoflife;
 
 import org.springframework.util.Assert;
 

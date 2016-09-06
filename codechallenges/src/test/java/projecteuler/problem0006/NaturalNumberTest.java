@@ -1,9 +1,11 @@
-package com.divinedragon.codechallenges.projecteuler.problem6;
+package projecteuler.problem0006;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import projecteuler.problem0006.NaturalNumbers;
 
 public class NaturalNumberTest {
 

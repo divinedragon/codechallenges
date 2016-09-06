@@ -1,9 +1,11 @@
-package com.divinedragon.codechallenges.projecteuler.problem4;
+package projecteuler.problem0004;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import projecteuler.problem0004.LargestPallindromeProduct;
 
 public class LargestPalindromeProductTest {
 

@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.gameoflife;
+package gameoflife;
 
 import static org.mockito.Matchers.anyBoolean;
 import static org.mockito.Matchers.anyInt;
@@ -13,8 +13,8 @@ import org.springframework.util.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.divinedragon.codechallenges.gameoflife.Grid;
-import com.divinedragon.codechallenges.gameoflife.RuleEngine;
+import gameoflife.Grid;
+import gameoflife.RuleEngine;
 
 public class GridTest {
 

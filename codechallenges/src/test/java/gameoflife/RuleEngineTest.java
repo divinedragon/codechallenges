@@ -1,10 +1,10 @@
-package com.divinedragon.codechallenges.gameoflife;
+package gameoflife;
 
 import org.springframework.util.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.divinedragon.codechallenges.gameoflife.RuleEngine;
+import gameoflife.RuleEngine;
 
 public class RuleEngineTest {
 

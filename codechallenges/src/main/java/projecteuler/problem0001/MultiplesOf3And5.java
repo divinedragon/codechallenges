@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.projecteuler.problem1;
+package projecteuler.problem0001;
 
 public class MultiplesOf3And5 {
 

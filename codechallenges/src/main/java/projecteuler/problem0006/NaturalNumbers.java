@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.projecteuler.problem6;
+package projecteuler.problem0006;
 
 public class NaturalNumbers {
 

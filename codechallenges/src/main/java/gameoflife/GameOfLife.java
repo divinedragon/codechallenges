@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.gameoflife;
+package gameoflife;
 
 import java.io.BufferedReader;
 import java.io.IOException;

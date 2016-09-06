@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.projecteuler.problem2;
+package projecteuler.problem0002;
 
 public class EvenFibonacciNumbers {
 

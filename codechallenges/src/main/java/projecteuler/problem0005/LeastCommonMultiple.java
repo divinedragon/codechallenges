@@ -1,6 +1,6 @@
-package com.divinedragon.codechallenges.projecteuler.problem5;
+package projecteuler.problem0005;
 
-import com.divinedragon.codechallenges.projecteuler.problem3.SieveOfEratosthenes;
+import projecteuler.problem0003.SieveOfEratosthenes;
 
 public class LeastCommonMultiple {
 

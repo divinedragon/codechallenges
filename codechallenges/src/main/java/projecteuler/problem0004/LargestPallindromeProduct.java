@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.projecteuler.problem4;
+package projecteuler.problem0004;
 
 import org.springframework.util.Assert;
 

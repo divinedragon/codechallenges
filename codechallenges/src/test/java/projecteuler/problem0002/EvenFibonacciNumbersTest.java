@@ -1,9 +1,11 @@
-package com.divinedragon.codechallenges.projecteuler.problem2;
+package projecteuler.problem0002;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import projecteuler.problem0002.EvenFibonacciNumbers;
 
 public class EvenFibonacciNumbersTest {
 

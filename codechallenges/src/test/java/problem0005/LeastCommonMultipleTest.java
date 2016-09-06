@@ -1,9 +1,11 @@
-package com.divinedragon.codechallenges.projecteuler.problem5;
+package problem0005;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import projecteuler.problem0005.LeastCommonMultiple;
 
 public class LeastCommonMultipleTest {
 

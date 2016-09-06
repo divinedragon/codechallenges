@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.numbertotext;
+package numbertotext;
 
 public class NumberToTextConverter {
 

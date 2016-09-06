@@ -1,4 +1,4 @@
-package com.divinedragon.codechallenges.projecteuler.problem3;
+package projecteuler.problem0003;
 
 public final class SieveOfEratosthenes {
 

@@ -1,9 +1,11 @@
-package com.divinedragon.codechallenges.projecteuler.problem1;
+package projecteuler.problem0001;
 
 import static org.testng.Assert.assertTrue;
 
     import org.testng.annotations.DataProvider;
     import org.testng.annotations.Test;
+
+import projecteuler.problem0001.MultiplesOf3And5;
     
     public class MultiplesOf3And5Test {
     

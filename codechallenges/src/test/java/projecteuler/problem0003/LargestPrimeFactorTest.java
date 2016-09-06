@@ -1,10 +1,12 @@
-package com.divinedragon.codechallenges.projecteuler.problem3;
+package projecteuler.problem0003;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import projecteuler.problem0003.LargestPrimeFactor;
 
 @Parameters
 public class LargestPrimeFactorTest {
