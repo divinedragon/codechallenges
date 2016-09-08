@@ -1,11 +1,11 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0001.Problem0004_LargestPallindromeProduct;
+import projecteuler.Problem0004_LargestPallindromeProduct;
 
 public class Problem0004_LargestPallindromeProductTest {
 

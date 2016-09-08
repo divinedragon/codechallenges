@@ -1,11 +1,11 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0001.Problem0006_NaturalNumbers;
+import projecteuler.Problem0006_NaturalNumbers;
 
 public class Problem0006_NaturalNumbersTest {
 

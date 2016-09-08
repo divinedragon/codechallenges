@@ -1,4 +1,4 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 public class Problem0003_LargestPrimeFactor {
 

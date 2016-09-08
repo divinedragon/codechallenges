@@ -1,11 +1,11 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0001.Problem0005_LeastCommonMultiple;
+import projecteuler.Problem0005_LeastCommonMultiple;
 
 public class Problem0005_LeastCommonMultipleTest {
 

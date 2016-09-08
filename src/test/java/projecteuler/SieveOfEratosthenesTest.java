@@ -1,10 +1,10 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
-import projecteuler.problem0001.SieveOfEratosthenes;
+import projecteuler.SieveOfEratosthenes;
 
 public class SieveOfEratosthenesTest {
 

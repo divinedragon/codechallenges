@@ -1,4 +1,4 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0001.Problem0003_LargestPrimeFactor;
+import projecteuler.Problem0003_LargestPrimeFactor;
 
 @Parameters
 public class Problem0003_LargestPrimeFactorTest {

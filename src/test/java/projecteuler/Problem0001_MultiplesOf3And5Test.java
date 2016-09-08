@@ -1,11 +1,11 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
     import org.testng.annotations.DataProvider;
     import org.testng.annotations.Test;
 
-import projecteuler.problem0001.Problem0001_MultiplesOf3And5;
+import projecteuler.Problem0001_MultiplesOf3And5;
     
     public class Problem0001_MultiplesOf3And5Test {
     

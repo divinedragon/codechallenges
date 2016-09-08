@@ -1,11 +1,11 @@
-package projecteuler.problem0001;
+package projecteuler;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import projecteuler.problem0001.Problem0002_EvenFibonacciNumbers;
+import projecteuler.Problem0002_EvenFibonacciNumbers;
 
 public class Problem0002_EvenFibonacciNumbersTest {
 
