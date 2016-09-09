@@ -1,25 +1,38 @@
 package projecteuler;
 
-import static org.testng.Assert.assertTrue;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
-import projecteuler.Problem0005_LeastCommonMultiple;
-
+@RunWith(Parameterized.class)
 public class Problem0005_LeastCommonMultipleTest {
 
-    @DataProvider(name = "testcases")
-    public Object[][] testcases() {
+    @Parameters
+    public static Object[][] testcases() {
+        // @formatter:off
         return new Object[][]{
             {new Integer(10), new Integer(2520) },
             {new Integer(20), new Integer(232792560) },
+            {new Integer(3), new Integer(6) },
         };
+        // @formatter:on
     }
 
-    @Test(dataProvider = "testcases")
-    public void testLeastCommonMultiple(final int number, final int expectedResult) {
+    private Integer number;
 
-        assertTrue(expectedResult == Problem0005_LeastCommonMultiple.leastCommonMultiple(number), "LCD calculated incorrect");
+    private Integer expectedResult;
+
+    public Problem0005_LeastCommonMultipleTest(final Integer number, final Integer expectedResult) {
+        this.number = number;
+        this.expectedResult = expectedResult;
+    }
+
+    @Test
+    public void testLeastCommonMultiple() {
+        assertThat(Problem0005_LeastCommonMultiple.leastCommonMultiple(number), is(expectedResult));
     }
 }

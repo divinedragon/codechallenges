@@ -1,43 +1,43 @@
 package gameoflife;
 
-import org.springframework.util.Assert;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
-import gameoflife.RuleEngine;
+import org.junit.Before;
+import org.junit.Test;
 
 public class RuleEngineTest {
 
     private RuleEngine fixture;
 
-    @BeforeTest
+    @Before
     public void beforeTest() {
         fixture = new RuleEngine();
     }
 
     @Test
     public void isAliveInNextGenerationRule1() {
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, -1) == false);
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 0) == false);
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 1) == false);
+        assertThat(fixture.isAliveInNextGeneration(true, -1), is(false));
+        assertThat(fixture.isAliveInNextGeneration(true, 0), is(false));
+        assertThat(fixture.isAliveInNextGeneration(true, 1), is(false));
     }
 
     @Test
     public void isAliveInNextGenerationRule2() {
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 2) == true);
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 3) == true);
+        assertThat(fixture.isAliveInNextGeneration(true, 2), is(true));
+        assertThat(fixture.isAliveInNextGeneration(true, 3), is(true));
     }
 
     @Test
     public void isAliveInNextGenerationRule3() {
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 4) == false);
-        Assert.isTrue(fixture.isAliveInNextGeneration(true, 5) == false);
+        assertThat(fixture.isAliveInNextGeneration(true, 4), is(false));
+        assertThat(fixture.isAliveInNextGeneration(true, 5), is(false));
     }
 
     @Test
     public void isAliveInNextGenerationRule4() {
-        Assert.isTrue(fixture.isAliveInNextGeneration(false, 2) == false);
-        Assert.isTrue(fixture.isAliveInNextGeneration(false, 3) == true);
-        Assert.isTrue(fixture.isAliveInNextGeneration(false, 4) == false);
+        assertThat(fixture.isAliveInNextGeneration(false, 2), is(false));
+        assertThat(fixture.isAliveInNextGeneration(false, 3), is(true));
+        assertThat(fixture.isAliveInNextGeneration(false, 4), is(false));
     }
 }

@@ -1,28 +1,36 @@
 package projecteuler;
 
-import static org.testng.Assert.assertTrue;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
-    import org.testng.annotations.DataProvider;
-    import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
-import projecteuler.Problem0001_MultiplesOf3And5;
-    
-    public class Problem0001_MultiplesOf3And5Test {
-    
-        @DataProvider(name = "testcases")
-        public Object[][] testCases() {
-            return new Object[][] {
-                { new int[] {3, 5}, new Integer(10), new Integer(23) },
-                { new int[] {3, 5}, new Integer(1000), new Integer(233168) }
-            };
-        }
-    
-        @Test(dataProvider = "testcases")
-        public void testGetSumOfMultiples3And5(
-                final int[] multipliers,
-                final Integer numberList,
-                final Integer expectedResult) {
-            assertTrue(expectedResult == Problem0001_MultiplesOf3And5.getSumOfMultiples(multipliers, numberList),
-                    "Incorrect Sum of Multiples of 3 and 5 Below 10");
-        }
+@RunWith(Parameterized.class)
+public class Problem0001_MultiplesOf3And5Test {
+
+    @Parameters
+    public static Object[][] testCases() {
+        // @formatter:off
+        return new Object[][] {
+            { new Integer(10), new Long(23) },
+            { new Integer(1000), new Long(233168) }
+        };
+        // @formatter:on
     }
+
+    private Integer numberList;
+    private Long expectedResult;
+
+    public Problem0001_MultiplesOf3And5Test(final Integer numberList, final Long expectedResult) {
+        this.numberList = numberList;
+        this.expectedResult = expectedResult;
+    }
+
+    @Test
+    public void testGetSumOfMultiples3And5() {
+        assertThat(Problem0001_MultiplesOf3And5.getSumOfMultiplesOf3And5(numberList), is(expectedResult));
+    }
+}

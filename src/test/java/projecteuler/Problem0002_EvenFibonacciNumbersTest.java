@@ -1,26 +1,32 @@
 package projecteuler;
 
-import static org.testng.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
-import projecteuler.Problem0002_EvenFibonacciNumbers;
-
+@RunWith(Parameterized.class)
 public class Problem0002_EvenFibonacciNumbersTest {
 
-    @DataProvider(name = "testcases")
-    public Object[][] testCases() {
-        return new Object[][] {
-            {new Integer(4000000), new Integer(4613732)}
-        };
+    @Parameters
+    public static Object[][] testCases() {
+        return new Object[][] { { new Integer(4000000), new Long(4613732) } };
     }
 
-    @Test(dataProvider = "testcases")
-    public void getEvenFibonacciNumberSumMaxValue(
-            final Integer maxValue,
-            final Integer expectedResult) {
-        assertTrue(expectedResult == Problem0002_EvenFibonacciNumbers.getEvenFibonacciNumberSum(maxValue),
-                "Sum of Even Valued Fibonacci Numbers is incorrect");
+    private Integer maxValue;
+
+    private Long expectedResult;
+
+    public Problem0002_EvenFibonacciNumbersTest(final Integer maxValue, final Long expectedResult) {
+        this.maxValue = maxValue;
+        this.expectedResult = expectedResult;
+    }
+
+    @Test
+    public void getEvenFibonacciNumberSumMaxValue() {
+        assertThat(Problem0002_EvenFibonacciNumbers.getEvenFibonacciNumberSum(maxValue), is(expectedResult));
     }
 }

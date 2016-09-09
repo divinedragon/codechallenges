@@ -6,18 +6,17 @@ public class Problem0004_LargestPallindromeProduct {
 
     public static void main(String[] args) {
 
-        System.out.println("Largest Pallindrome Product of 2 digit numbers - "
-                + getLargestPallindromeProduct(2));
-        System.out.println("Largest Pallindrome Product of 3 digit numbers - "
-                + getLargestPallindromeProduct(3));
+        System.out.println(
+                "Largest Pallindrome Product of 2 digit numbers - " + getLargestPallindromeProduct(2, 1000000));
+        System.out.println(
+                "Largest Pallindrome Product of 3 digit numbers - " + getLargestPallindromeProduct(3, 1000000));
     }
 
-    public static long getLargestPallindromeProduct(final int numberOfDigits) {
+    public static long getLargestPallindromeProduct(final int numberOfDigits, final int productLimit) {
 
         Assert.isTrue(numberOfDigits > 0);
 
-        long minValue = Long.parseLong(
-                "1" + new String(new char[numberOfDigits - 1]).replace("\0", "0"));
+        long minValue = Long.parseLong("1" + new String(new char[numberOfDigits - 1]).replace("\0", "0"));
 
         long maxValue = Long.parseLong(new String(new char[numberOfDigits]).replace("\0", "9"));
 
@@ -36,7 +35,7 @@ public class Problem0004_LargestPallindromeProduct {
 
                 product = value1 * value2;
 
-                if (product > maxProduct) {
+                if (product > maxProduct && product < productLimit) {
                     productStr = product + "";
                     productStrReverse = new StringBuilder(productStr).reverse().toString();
 

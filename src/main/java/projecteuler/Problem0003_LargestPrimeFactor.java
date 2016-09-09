@@ -12,7 +12,10 @@ public class Problem0003_LargestPrimeFactor {
 
         long largestPrimeFactor = 0L;
 
-        /* If the Number is divisible by 2, we will divide it till it can be divided by 2 */
+        /*
+         * If the Number is divisible by 2, we will divide it till it can be
+         * divided by 2
+         */
         if (value % 2 == 0) {
             largestPrimeFactor = 2;
 
@@ -24,7 +27,7 @@ public class Problem0003_LargestPrimeFactor {
         long factor = 3L;
         long maxFactor = (long) Math.sqrt(value);
 
-        while (value > 1 && factor < maxFactor) {
+        while (value > 1 && factor <= maxFactor) {
 
             if (value % factor == 0) {
                 largestPrimeFactor = factor;

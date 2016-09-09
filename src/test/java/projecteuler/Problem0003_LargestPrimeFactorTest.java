@@ -1,27 +1,37 @@
 package projecteuler;
 
-import static org.testng.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
-import projecteuler.Problem0003_LargestPrimeFactor;
-
-@Parameters
+@RunWith(Parameterized.class)
 public class Problem0003_LargestPrimeFactorTest {
 
-    @DataProvider(name = "testcases")
-    public Object[][] testCases() {
+    @Parameters
+    public static Object[][] testCases() {
+        // @formatter:off
         return new Object[][] {
-            { new Long(13195), new Integer(29) },
-            { new Long(600851475143L), new Integer(6857) }
+            { new Long(13195), new Long(29) },
+            { new Long(600851475143L), new Long(6857) }
         };
+        // @formatter:on
     }
 
-    @Test(dataProvider = "testcases")
-    public void testGetLargestPrimeFactor(final Long number, final Integer expectedResult) {
-        assertTrue(expectedResult == Problem0003_LargestPrimeFactor.getLargestPrimeFactor(number),
-                "Calculation not correct");
+    private Long number;
+
+    private Long expectedResult;
+
+    public Problem0003_LargestPrimeFactorTest(final Long number, final Long expectedResult) {
+        this.number = number;
+        this.expectedResult = expectedResult;
+    }
+
+    @Test
+    public void testGetLargestPrimeFactor() {
+        assertThat(Problem0003_LargestPrimeFactor.getLargestPrimeFactor(number), is(expectedResult));
     }
 }

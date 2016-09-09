@@ -21,7 +21,7 @@ public class Problem0005_LeastCommonMultiple {
             power[i] = 1;
         }
 
-        while (PRIMES[counter] < number) {
+        while (PRIMES[counter] <= number) {
 
             if (PRIMES[counter] <= powerLogicLimit) {
                 power[counter] = (int) (Math.log(number) / Math.log(PRIMES[counter]));
