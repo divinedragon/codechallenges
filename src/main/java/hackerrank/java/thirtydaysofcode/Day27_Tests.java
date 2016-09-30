@@ -15,24 +15,19 @@ public class Day27_Tests {
 
     public static void main(String[] args) {
 
-        System.out.println("5");
+        System.out.println(5);
         System.out.println("4 3");
-        System.out.println("-1 -3 4 2");
-        System.out.println("5 2");
-        System.out.println("0 -1 2 1 4");
-        System.out.println("3 1");
-        System.out.println("-1 -2 -3");
-        System.out.println("10 10");
-        System.out.println("0 0 0 0 0 0 0 0 0 0");
-        System.out.println("10 1");
-        System.out.println("0 0 0 0 0 0 0 0 0 0");
-        System.out.println("3 3");
-        System.out.println("0 -3 4");
-        System.out.println("7 2");
-        System.out.println("0 -3 1 1 1 1 1");
-        System.out.println("6 3");
-        System.out.println("0 -3 4 2 1 1");
+        System.out.println("-1 0 4 2");
+        System.out.println("6 1");
+        System.out.println("-2 -4 -5 0 3 4");
+        System.out.println("5 3");
+        System.out.println("0 -1 5 6 7");
+        System.out.println("3 2");
+        System.out.println("-9 0 10");
+        System.out.println("7 6");
+        System.out.println("-9 -8 -7 0 9 10 11");
         professorSolution();
+
     }
 
     public static void professorSolution() {
