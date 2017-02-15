@@ -15,7 +15,7 @@ public class Day23_BinarySearchTreeLevelOrderTraversal {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
-        Node root = null;
+        BSTNode root = null;
         while (T-- > 0) {
             int data = sc.nextInt();
             root = insert(root, data);
@@ -25,11 +25,11 @@ public class Day23_BinarySearchTreeLevelOrderTraversal {
 
     }
 
-    public static Node insert(Node root, int data) {
+    public static BSTNode insert(BSTNode root, int data) {
         if (root == null) {
-            return new Node(data);
+            return new BSTNode(data);
         } else {
-            Node cur;
+            BSTNode cur;
             if (data <= root.data) {
                 cur = insert(root.left, data);
                 root.left = cur;
@@ -41,8 +41,8 @@ public class Day23_BinarySearchTreeLevelOrderTraversal {
         }
     }
 
-    static void levelOrder(Node root) {
-        Queue<Node> q = new LinkedList<Node>();
+    static void levelOrder(BSTNode root) {
+        Queue<BSTNode> q = new LinkedList<BSTNode>();
 
         if (root != null) {
 
@@ -50,7 +50,7 @@ public class Day23_BinarySearchTreeLevelOrderTraversal {
 
             while (q.size() > 0) {
 
-                Node n = q.poll();
+                BSTNode n = q.poll();
 
                 System.out.print(n.data + " ");
 
