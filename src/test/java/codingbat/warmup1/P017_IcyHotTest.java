@@ -123,4 +123,112 @@ public class P017_IcyHotTest {
 
         assertThat(actual, is(equalTo(expected)));
     }
+
+    @Test
+    public void shouldReturnTrueWhenSecondIsLessThan0AndFirstIsGreaterThan100() {
+        int temp1 = 101;
+        int temp2 = -1;
+
+        boolean expected = true;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsLessThan0AndFirstIsEqualTo100() {
+        int temp1 = 100;
+        int temp2 = -1;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsLessThan0AndFirstIsLessThan100() {
+        int temp1 = 99;
+        int temp2 = -1;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsEqualTo0AndFirstIsGreaterThan100() {
+        int temp1 = 101;
+        int temp2 = 0;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsEqualTo0AndFirstIsEqualTo100() {
+        int temp1 = 100;
+        int temp2 = 0;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsEqualTo0AndFirstIsLessThan100() {
+        int temp1 = 99;
+        int temp2 = 0;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsGreaterThan0AndFirstIsGreaterThan100() {
+        int temp1 = 101;
+        int temp2 = 1;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsGreaterThan0AndFirstIsEqualTo100() {
+        int temp1 = 100;
+        int temp2 = 1;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSecondIsGreaterThan0AndFirstIsLessThan100() {
+        int temp1 = 99;
+        int temp2 = 1;
+
+        boolean expected = false;
+
+        boolean actual = fixture.icyHot(temp1, temp2);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
 }
