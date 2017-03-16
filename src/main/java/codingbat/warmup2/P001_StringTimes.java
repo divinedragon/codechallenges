@@ -3,7 +3,13 @@ package codingbat.warmup2;
 public class P001_StringTimes {
 
     public String stringTimes(String str, int n) {
-        // TODO
-        return null;
+
+        String result = "";
+
+        for (int i = 1; i <= n; i++) {
+            result += str;
+        }
+
+        return result;
     }
 }
