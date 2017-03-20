@@ -74,7 +74,7 @@ public class P002_FrontTimesTest {
         String str = "abcd";
         int n = 0;
 
-        String expected = "abc";
+        String expected = "";
 
         String actual = fixture.frontTimes(str, n);
 
