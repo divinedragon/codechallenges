@@ -1,7 +1,5 @@
 package techgig;
 
-import java.util.Arrays;
-
 public class KingOfSupassing {
 
     public static int[] SurpassersKing(final int[] input1) {

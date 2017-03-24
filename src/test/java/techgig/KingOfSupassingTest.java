@@ -27,4 +27,24 @@ public class KingOfSupassingTest {
 
         assertThat(actual, is(equalTo(expected)));
     }
+
+    @Test
+    public void testcase3() {
+        int[] input = {};
+        int[] expected = {};
+
+        int[] actual = KingOfSupassing.SurpassersKing(input);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void testcase4() {
+        int[] input = {1};
+        int[] expected = {0};
+
+        int[] actual = KingOfSupassing.SurpassersKing(input);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
 }
