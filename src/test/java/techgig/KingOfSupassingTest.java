@@ -4,9 +4,17 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class KingOfSupassingTest {
+
+    private KingOfSupassing fixture;
+
+    @Before
+    public void setup() {
+        fixture = new KingOfSupassing();
+    }
 
     @Test
     public void testcase1() {
