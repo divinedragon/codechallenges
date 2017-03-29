@@ -40,7 +40,7 @@ public class VarargsDemo {
 
             }
             if (overload) {
-                throw new Exception("Overloading not allowed");
+                throw new IllegalAccessException("Overloading not allowed");
             }
         } catch (Exception e) {
             e.printStackTrace();

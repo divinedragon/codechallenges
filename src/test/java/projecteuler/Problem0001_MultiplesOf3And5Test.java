@@ -11,18 +11,16 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class Problem0001_MultiplesOf3And5Test {
 
+    private Integer numberList;
+
+    private Long expectedResult;
+
     @Parameters
     public static Object[][] testCases() {
         // @formatter:off
-        return new Object[][] {
-            { new Integer(10), new Long(23) },
-            { new Integer(1000), new Long(233168) }
-        };
+        return new Object[][] { { new Integer(10), new Long(23) }, { new Integer(1000), new Long(233168) } };
         // @formatter:on
     }
-
-    private Integer numberList;
-    private Long expectedResult;
 
     public Problem0001_MultiplesOf3And5Test(final Integer numberList, final Long expectedResult) {
         this.numberList = numberList;

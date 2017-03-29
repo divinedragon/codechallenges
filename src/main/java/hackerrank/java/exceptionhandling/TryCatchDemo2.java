@@ -16,9 +16,9 @@ public class TryCatchDemo2 {
         while (in.hasNextInt()) {
             int n = in.nextInt();
             int p = in.nextInt();
-            MyCalculator my_calculator = new MyCalculator();
+            MyCalculator mycalculator = new MyCalculator();
             try {
-                System.out.println(my_calculator.power(n, p));
+                System.out.println(mycalculator.power(n, p));
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -32,7 +32,7 @@ class MyCalculator {
     public int power(int n, int p) throws Exception {
 
         if (n < 0 || p < 0) {
-            throw new Exception("n and p should be non-negative");
+            throw new IllegalArgumentException("n and p should be non-negative");
         }
 
         return (int) Math.pow(n, p);

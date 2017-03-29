@@ -24,6 +24,6 @@ public class RegularExpressionDemo {
 }
 
 class MyRegex {
-    String ipRange = "([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])";
-    String pattern = ipRange + "." + ipRange + "." + ipRange + "." + ipRange;
+    public String ipRange = "([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])";
+    public String pattern = ipRange + "." + ipRange + "." + ipRange + "." + ipRange;
 }

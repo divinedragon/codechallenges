@@ -11,6 +11,10 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class Problem0005_LeastCommonMultipleTest {
 
+    private Integer number;
+
+    private Integer expectedResult;
+
     @Parameters
     public static Object[][] testcases() {
         // @formatter:off
@@ -21,10 +25,6 @@ public class Problem0005_LeastCommonMultipleTest {
         };
         // @formatter:on
     }
-
-    private Integer number;
-
-    private Integer expectedResult;
 
     public Problem0005_LeastCommonMultipleTest(final Integer number, final Integer expectedResult) {
         this.number = number;

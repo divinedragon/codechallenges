@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InstaceOfDemo {
+public class InstanceOfDemo {
 
     static {
         String input = "5\nStudent\nStudent\nRockstar\nStudent\nHacker";
@@ -12,7 +12,9 @@ public class InstaceOfDemo {
     }
 
     public static String count(ArrayList<Object> mylist) {
-        int a = 0, b = 0, c = 0;
+        int a = 0;
+        int b = 0;
+        int c = 0;
         for (int i = 0; i < mylist.size(); i++) {
             Object element = mylist.get(i);
             if (element instanceof Student)

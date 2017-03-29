@@ -35,7 +35,7 @@ abstract class Book {
 
 class MyBook extends Book {
 
-    int price;
+    private int price;
 
     public MyBook(final String title, final String author, final int price) {
         super(title, author);

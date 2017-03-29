@@ -23,11 +23,11 @@ public class AbstractDemo {
 }
 
 abstract class Book {
-    String title;
+    protected String title;
 
-    abstract void setTitle(String s);
+    public abstract void setTitle(String s);
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 }
@@ -35,7 +35,7 @@ abstract class Book {
 class MyBook extends Book {
 
     @Override
-    void setTitle(String s) {
+    public void setTitle(String s) {
         this.title = s;
     }
 }
