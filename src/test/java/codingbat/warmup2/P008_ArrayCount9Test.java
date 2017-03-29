@@ -12,7 +12,7 @@ public class P008_ArrayCount9Test {
     private P008_ArrayCount9 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P008_ArrayCount9();
     }
 

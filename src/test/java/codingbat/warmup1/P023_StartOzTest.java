@@ -12,7 +12,7 @@ public class P023_StartOzTest {
     private P023_StartOz fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P023_StartOz();
     }
 

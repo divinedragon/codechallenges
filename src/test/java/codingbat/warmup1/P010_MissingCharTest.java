@@ -12,7 +12,7 @@ public class P010_MissingCharTest {
     private P010_MissingChar fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P010_MissingChar();
     }
 

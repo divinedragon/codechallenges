@@ -12,7 +12,7 @@ public class P009_ArrayFront9Test {
     private P009_ArrayFront9 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P009_ArrayFront9();
     }
 

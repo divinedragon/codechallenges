@@ -12,7 +12,7 @@ public class P017_IcyHotTest {
     private P017_IcyHot fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P017_IcyHot();
     }
 

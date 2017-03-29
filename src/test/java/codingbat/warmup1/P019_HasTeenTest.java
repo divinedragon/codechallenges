@@ -12,7 +12,7 @@ public class P019_HasTeenTest {
     private P019_HasTeen fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P019_HasTeen();
     }
 

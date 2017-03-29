@@ -12,7 +12,7 @@ public class P013_AltPairsTest {
     private P013_AltPairs fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P013_AltPairs();
     }
 

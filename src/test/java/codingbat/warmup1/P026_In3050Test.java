@@ -13,7 +13,7 @@ public class P026_In3050Test {
     private P026_In3050 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P026_In3050();
     }
 

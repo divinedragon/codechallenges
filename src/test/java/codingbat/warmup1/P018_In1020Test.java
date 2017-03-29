@@ -12,7 +12,7 @@ public class P018_In1020Test {
     private P018_In1020 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P018_In1020();
     }
 

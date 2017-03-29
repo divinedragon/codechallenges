@@ -12,7 +12,7 @@ public class P012_StringXTest {
     private P012_StringX fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P012_StringX();
     }
 

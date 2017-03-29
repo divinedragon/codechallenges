@@ -12,7 +12,7 @@ public class P011_FrontBackTest {
     private P011_FrontBack fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P011_FrontBack();
     }
 

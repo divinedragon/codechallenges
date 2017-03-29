@@ -12,7 +12,7 @@ public class P009_NotStringTest {
     private P009_NotString fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P009_NotString();
     }
 

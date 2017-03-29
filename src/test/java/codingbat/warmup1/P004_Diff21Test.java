@@ -12,7 +12,7 @@ public class P004_Diff21Test {
     private P004_Diff21 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P004_Diff21();
     }
 

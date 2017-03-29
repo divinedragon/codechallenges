@@ -12,7 +12,7 @@ public class P006_Makes10Test {
     private P006_Makes10 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P006_Makes10();
     }
 

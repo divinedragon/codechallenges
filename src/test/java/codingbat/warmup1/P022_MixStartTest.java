@@ -12,7 +12,7 @@ public class P022_MixStartTest {
     private P022_MixStart fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P022_MixStart();
     }
 

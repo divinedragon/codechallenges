@@ -12,7 +12,7 @@ public class P003_CountXXTest {
     private P003_CountXX fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P003_CountXX();
     }
 

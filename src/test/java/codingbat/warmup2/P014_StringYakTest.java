@@ -11,7 +11,7 @@ public class P014_StringYakTest {
     private P014_StringYak fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P014_StringYak();
     }
 

@@ -12,7 +12,7 @@ public class P011_StringMatchTest {
     private P011_StringMatch fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P011_StringMatch();
     }
 

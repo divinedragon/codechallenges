@@ -12,7 +12,7 @@ public class P004_DoubleXTest {
     private P004_DoubleX fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P004_DoubleX();
     }
 
