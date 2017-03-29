@@ -10,11 +10,9 @@ import org.junit.Test;
 
 public class JailBreakInBhopalTest {
 
-    private JailBreakInBhopal fixture;
-
     @Before
-    public void setup() {
-        fixture = new JailBreakInBhopal();
+    public void setUp() {
+        JailBreakInBhopal fixture = new JailBreakInBhopal();
 
         assertThat(fixture, is(notNullValue()));
     }
