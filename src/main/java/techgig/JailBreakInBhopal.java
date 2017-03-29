@@ -2,7 +2,7 @@ package techgig;
 
 public class JailBreakInBhopal {
 
-    public static int GetJumpCount(final int jumpLength, final int slipLength, final int[] wallHeights) {
+    public static int getJumpCount(final int jumpLength, final int slipLength, final int[] wallHeights) {
         int jumpCount = 0;
 
         int effectiveJumpLength = jumpLength - slipLength;

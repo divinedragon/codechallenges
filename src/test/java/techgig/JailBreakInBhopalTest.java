@@ -2,11 +2,22 @@ package techgig;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class JailBreakInBhopalTest {
+
+    private JailBreakInBhopal fixture;
+
+    @Before
+    public void setup() {
+        fixture = new JailBreakInBhopal();
+
+        assertThat(fixture, is(notNullValue()));
+    }
 
     @Test
     public void testcase1() {
@@ -17,7 +28,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 1;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -31,7 +42,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 5;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -45,7 +56,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 2;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -59,7 +70,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 2;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -73,7 +84,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 3;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -87,7 +98,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 3;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -101,7 +112,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 3;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -115,7 +126,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 4;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
@@ -129,7 +140,7 @@ public class JailBreakInBhopalTest {
 
         int expectedJumpCount = 6;
 
-        int actualJumpCount = JailBreakInBhopal.GetJumpCount(jumpLength, slipLength, wallHeights);
+        int actualJumpCount = JailBreakInBhopal.getJumpCount(jumpLength, slipLength, wallHeights);
 
         assertThat(actualJumpCount, is(equalTo(expectedJumpCount)));
     }
