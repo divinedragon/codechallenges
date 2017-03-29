@@ -22,15 +22,15 @@ public class Day13_AbstractClasses {
 }
 
 abstract class Book {
-    String title;
-    String author;
+    protected String title;
+    protected String author;
 
     Book(String t, String a) {
         title = t;
         author = a;
     }
 
-    abstract void display();
+    public abstract void display();
 }
 
 class MyBook extends Book {
@@ -43,7 +43,7 @@ class MyBook extends Book {
     }
 
     @Override
-    void display() {
+    public void display() {
         System.out.printf("Title: %s\nAuthor: %s\nPrice: %d\n", title, author, price);
     }
 

@@ -13,22 +13,22 @@ public class MethodOverridingDemo {
 
 class Sports {
 
-    String getName() {
+    public String getName() {
         return "Generic Sports";
     }
 
-    void getNumberOfTeamMembers() {
+    public void getNumberOfTeamMembers() {
         System.out.println("Each team has n players in " + getName());
     }
 }
 
 class Soccer extends Sports {
     @Override
-    String getName() {
+    public String getName() {
         return "Soccer Class";
     }
 
-    void getNumberOfTeamMembers() {
+    public void getNumberOfTeamMembers() {
         System.out.println("Each team has 11 players in " + getName());
     }
 }

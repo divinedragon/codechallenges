@@ -11,17 +11,17 @@ public class InheritanceOneDemo {
 }
 
 class Animal {
-    void walk() {
+    public void walk() {
         System.out.println("I am walking");
     }
 }
 
 class Bird extends Animal {
-    void fly() {
+    public void fly() {
         System.out.println("I am flying");
     }
 
-    void sing() {
+    public void sing() {
         System.out.println("I am singing");
     }
 }

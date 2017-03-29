@@ -12,7 +12,7 @@ public class IteratorDemo {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
     }
 
-    static Iterator func(ArrayList mylist) {
+    public static Iterator func(ArrayList mylist) {
         Iterator it = mylist.iterator();
         while (it.hasNext()) {
             Object element = it.next();

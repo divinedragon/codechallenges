@@ -11,14 +11,14 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class Problem0002_EvenFibonacciNumbersTest {
 
+    private Integer maxValue;
+
+    private Long expectedResult;
+
     @Parameters
     public static Object[][] testCases() {
         return new Object[][] { { new Integer(4000000), new Long(4613732) } };
     }
-
-    private Integer maxValue;
-
-    private Long expectedResult;
 
     public Problem0002_EvenFibonacciNumbersTest(final Integer maxValue, final Long expectedResult) {
         this.maxValue = maxValue;

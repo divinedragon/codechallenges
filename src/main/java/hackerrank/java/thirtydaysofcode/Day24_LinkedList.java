@@ -1,4 +1,4 @@
-package hackerrank.java.thirtydaysofcode;
+    package hackerrank.java.thirtydaysofcode;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
@@ -83,8 +83,8 @@ public class Day24_LinkedList {
 }
 
 class NodeLinkedList {
-    int data;
-    NodeLinkedList next;
+    public int data;
+    public NodeLinkedList next;
 
     NodeLinkedList(int d) {
         data = d;

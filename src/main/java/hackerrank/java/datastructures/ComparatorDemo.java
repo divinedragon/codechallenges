@@ -51,8 +51,8 @@ class Checker implements Comparator {
 }
 
 class Player {
-    String name;
-    int score;
+    public String name;
+    public int score;
 
     Player(String name, int score) {
         this.name = name;
