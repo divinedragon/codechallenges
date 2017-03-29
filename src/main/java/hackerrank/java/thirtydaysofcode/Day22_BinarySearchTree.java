@@ -48,10 +48,10 @@ public class Day22_BinarySearchTree {
 }
 
 class BSTNode {
-    BSTNode left, right;
-    int data;
+    public BSTNode left, right;
+    public int data;
 
-    BSTNode(int data) {
+    public BSTNode(int data) {
         this.data = data;
         left = right = null;
     }

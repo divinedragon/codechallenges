@@ -56,7 +56,7 @@ class Calculate {
 
     private static Calculate c;
     public Output output;
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     public Calculate() {
         c = this;

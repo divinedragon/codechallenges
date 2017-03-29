@@ -11,21 +11,19 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class Problem0004_LargestPallindromeProductTest {
 
-    @Parameters
-    public static Object[][] testCases() {
-        // @formatter:off
-        return new Object[][] {
-                { new Integer(2), 1000000, new Long(9009) },
-                { new Integer(3), 1000000, new Long(906609) }
-        };
-        // @formatter:on
-    }
-
     private Integer numberOfDigits;
 
     private Integer productLimit;
 
     private Long expectedResult;
+
+    @Parameters
+    public static Object[][] testCases() {
+        // @formatter:off
+        return new Object[][] { { new Integer(2), 1000000, new Long(9009) },
+                { new Integer(3), 1000000, new Long(906609) } };
+        // @formatter:on
+    }
 
     public Problem0004_LargestPallindromeProductTest(final Integer numberOfDigits, final Integer productLimit,
             final Long expectedResult) {

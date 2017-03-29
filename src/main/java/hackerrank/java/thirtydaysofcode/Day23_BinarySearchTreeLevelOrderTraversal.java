@@ -41,7 +41,7 @@ public class Day23_BinarySearchTreeLevelOrderTraversal {
         }
     }
 
-    static void levelOrder(BSTNode root) {
+    public static void levelOrder(BSTNode root) {
         Queue<BSTNode> q = new LinkedList<BSTNode>();
 
         if (root != null) {

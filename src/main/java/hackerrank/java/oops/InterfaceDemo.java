@@ -16,7 +16,7 @@ public class InterfaceDemo {
         ImplementedInterfaceNames(my_calculator);
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.print(my_calculator.divisor_sum(n) + "\n");
+        System.out.print(my_calculator.divisorSum(n) + "\n");
         sc.close();
     }
 
@@ -24,7 +24,7 @@ public class InterfaceDemo {
      * ImplementedInterfaceNames method takes an object and prints the name of
      * the interfaces it implemented
      */
-    static void ImplementedInterfaceNames(Object o) {
+    public static void ImplementedInterfaceNames(Object o) {
         Class[] theInterfaces = o.getClass().getInterfaces();
         for (int i = 0; i < theInterfaces.length; i++) {
             String interfaceName = theInterfaces[i].getName();
@@ -34,13 +34,13 @@ public class InterfaceDemo {
 }
 
 interface AdvancedArithmetic {
-    int divisor_sum(int n);
+    int divisorSum(int n);
 }
 
 class MyCalculator implements AdvancedArithmetic {
 
     @Override
-    public int divisor_sum(int n) {
+    public int divisorSum(int n) {
         int sum = 0;
         for (int i = 1; i <= n; i++) {
             if (n % i == 0) {

@@ -11,7 +11,7 @@ public class InstaceOfDemo {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
     }
 
-    static String count(ArrayList<Object> mylist) {
+    public static String count(ArrayList<Object> mylist) {
         int a = 0, b = 0, c = 0;
         for (int i = 0; i < mylist.size(); i++) {
             Object element = mylist.get(i);
@@ -32,11 +32,11 @@ public class InstaceOfDemo {
         int t = sc.nextInt();
         for (int i = 0; i < t; i++) {
             String s = sc.next();
-            if (s.equals("Student"))
+            if ("Student".equals(s))
                 mylist.add(new Student());
-            if (s.equals("Rockstar"))
+            if ("Rockstar".equals(s))
                 mylist.add(new Rockstar());
-            if (s.equals("Hacker"))
+            if ("Hacker".equals(s))
                 mylist.add(new Hacker());
         }
         System.out.println(count(mylist));
