@@ -16,14 +16,14 @@ public class RegularExpressionDemo {
 
         while (in.hasNext()) {
             String IP = in.next();
-            System.out.println(IP.matches(new myRegex().pattern));
+            System.out.println(IP.matches(new MyRegex().pattern));
         }
 
         in.close();
     }
 }
 
-class myRegex {
+class MyRegex {
     String ipRange = "([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])";
     String pattern = ipRange + "." + ipRange + "." + ipRange + "." + ipRange;
 }

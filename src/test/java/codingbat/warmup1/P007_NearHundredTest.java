@@ -12,7 +12,7 @@ public class P007_NearHundredTest {
     private P007_NearHundred fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P007_NearHundred();
     }
 

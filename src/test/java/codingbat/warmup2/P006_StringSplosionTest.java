@@ -12,7 +12,7 @@ public class P006_StringSplosionTest {
     private P006_StringSplosion fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P006_StringSplosion();
     }
 

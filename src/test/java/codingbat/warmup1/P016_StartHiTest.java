@@ -12,7 +12,7 @@ public class P016_StartHiTest {
     private P016_StartHi fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P016_StartHi();
     }
 

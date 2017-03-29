@@ -12,7 +12,7 @@ public class P025_Close10Test {
     private P025_Close10 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P025_Close10();
     }
 

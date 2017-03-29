@@ -12,7 +12,7 @@ public class P007_Last2Test {
     private P007_Last2 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P007_Last2();
     }
 

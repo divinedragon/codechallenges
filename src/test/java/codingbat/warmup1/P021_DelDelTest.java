@@ -12,7 +12,7 @@ public class P021_DelDelTest {
     private P021_DelDel fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P021_DelDel();
     }
 

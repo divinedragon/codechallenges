@@ -12,7 +12,7 @@ public class P030_EndUpTest {
     private P030_EndUp fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P030_EndUp();
     }
 

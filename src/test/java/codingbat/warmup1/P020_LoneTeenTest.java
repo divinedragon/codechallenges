@@ -12,7 +12,7 @@ public class P020_LoneTeenTest {
     private P020_LoneTeen fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P020_LoneTeen();
     }
 

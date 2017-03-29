@@ -12,7 +12,7 @@ public class P031_EveryNthTest {
     private P031_EveryNth fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P031_EveryNth();
     }
 

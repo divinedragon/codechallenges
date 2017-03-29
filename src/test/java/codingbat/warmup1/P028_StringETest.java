@@ -12,7 +12,7 @@ public class P028_StringETest {
     private P028_StringE fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P028_StringE();
     }
 

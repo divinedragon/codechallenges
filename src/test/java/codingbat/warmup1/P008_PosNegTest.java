@@ -12,7 +12,7 @@ public class P008_PosNegTest {
     private P008_PosNeg fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P008_PosNeg();
     }
 

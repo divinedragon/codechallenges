@@ -12,7 +12,7 @@ public class P005_StringBitsTest {
     public P005_StringBits fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P005_StringBits();
     }
 

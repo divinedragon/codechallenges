@@ -2,7 +2,7 @@ package techgig;
 
 public class KingOfSupassing {
 
-    public static int[] SurpassersKing(final int[] input1) {
+    public static int[] surpassersKing(final int[] input1) {
         int result[] = new int[input1.length];
 
         int lastIndex = input1.length;

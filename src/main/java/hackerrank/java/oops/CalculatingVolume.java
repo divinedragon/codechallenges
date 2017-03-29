@@ -16,27 +16,27 @@ public class CalculatingVolume {
         DoNotTerminate.forbidExit();
         try {
             Calculate cal = new Calculate();
-            int T = cal.get_int_val();
+            int T = cal.getIntVal();
             while (T-- > 0) {
                 double volume = 0.0;
-                int ch = cal.get_int_val();
+                int ch = cal.getIntVal();
                 if (ch == 1) {
-                    int a = cal.get_int_val();
-                    volume = Calculate.do_calc().get_volume(a);
+                    int a = cal.getIntVal();
+                    volume = Calculate.doCalc().getVolume(a);
                 } else if (ch == 2) {
-                    int l = cal.get_int_val();
-                    int b = cal.get_int_val();
-                    int h = cal.get_int_val();
-                    volume = Calculate.do_calc().get_volume(l, b, h);
+                    int l = cal.getIntVal();
+                    int b = cal.getIntVal();
+                    int h = cal.getIntVal();
+                    volume = Calculate.doCalc().getVolume(l, b, h);
 
                 } else if (ch == 3) {
-                    double r = cal.get_double_val();
-                    volume = Calculate.do_calc().get_volume(r);
+                    double r = cal.getDoubleVal();
+                    volume = Calculate.doCalc().getVolume(r);
 
                 } else if (ch == 4) {
-                    double r = cal.get_double_val();
-                    double h = cal.get_double_val();
-                    volume = Calculate.do_calc().get_volume(r, h);
+                    double r = cal.getDoubleVal();
+                    double h = cal.getDoubleVal();
+                    volume = Calculate.doCalc().getVolume(r, h);
 
                 }
                 cal.output.display(volume);
@@ -63,27 +63,27 @@ class Calculate {
         output = new Output();
     }
 
-    public static Calculate do_calc() {
+    public static Calculate doCalc() {
         return c;
     }
 
-    public double get_volume(int a) {
+    public double getVolume(int a) {
         return a * a * a * 1.0;
     }
 
-    public double get_volume(int l, int b, int h) {
+    public double getVolume(int l, int b, int h) {
         return l * b * h * 1.0;
     }
 
-    public double get_volume(double r) {
+    public double getVolume(double r) {
         return (2 * Math.PI * r * r * r) / 3;
     }
 
-    public double get_volume(double r, double h) {
+    public double getVolume(double r, double h) {
         return Math.PI * r * r * h;
     }
 
-    public int get_int_val() throws IOException {
+    public int getIntVal() throws IOException {
 
         int intValue = scan.nextInt();
 
@@ -94,7 +94,7 @@ class Calculate {
         return intValue;
     }
 
-    public double get_double_val() throws IOException {
+    public double getDoubleVal() throws IOException {
         double doubleValue = scan.nextDouble();
 
         if (doubleValue <= 0) {

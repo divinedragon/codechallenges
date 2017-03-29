@@ -12,7 +12,7 @@ public class P029_LastDigitTest {
     private P029_LastDigit fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P029_LastDigit();
     }
 

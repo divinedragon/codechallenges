@@ -12,7 +12,7 @@ public class P015_Array667Test {
     private P015_Array667 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P015_Array667();
     }
 

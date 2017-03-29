@@ -12,7 +12,7 @@ public class P027_Max1020Test {
     private P027_Max1020 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P027_Max1020();
     }
 

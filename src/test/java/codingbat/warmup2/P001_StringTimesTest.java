@@ -12,7 +12,7 @@ public class P001_StringTimesTest {
     private P001_StringTimes fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P001_StringTimes();
     }
 

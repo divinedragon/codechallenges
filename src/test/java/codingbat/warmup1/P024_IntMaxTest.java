@@ -12,7 +12,7 @@ public class P024_IntMaxTest {
     private P024_IntMax fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P024_IntMax();
     }
 

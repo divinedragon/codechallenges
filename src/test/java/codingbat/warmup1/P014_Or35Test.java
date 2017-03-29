@@ -12,7 +12,7 @@ public class P014_Or35Test {
     private P014_Or35 fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P014_Or35();
     }
 

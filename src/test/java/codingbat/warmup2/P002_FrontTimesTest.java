@@ -12,7 +12,7 @@ public class P002_FrontTimesTest {
     private P002_FrontTimes fixture;
 
     @Before
-    public void setup() {
+    public void setUp() {
         fixture = new P002_FrontTimes();
     }
 
