@@ -15,7 +15,7 @@ public class GenericsDemo {
         for (Method method : Printer.class.getDeclaredMethods()) {
             String name = method.getName();
 
-            if (name.equals("printArray"))
+            if ("printArray".equals(name))
                 count++;
         }
 

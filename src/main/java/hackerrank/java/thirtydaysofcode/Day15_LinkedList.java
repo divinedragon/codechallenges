@@ -10,7 +10,7 @@ public class Day15_LinkedList {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
     }
 
-    public static void display(Node head) {
+    public static void display(final Node head) {
         Node start = head;
         while (start != null) {
             System.out.print(start.data + " ");
@@ -18,7 +18,7 @@ public class Day15_LinkedList {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(final String args[]) {
         Scanner sc = new Scanner(System.in);
         Node head = null;
         int N = sc.nextInt();
@@ -49,10 +49,10 @@ public class Day15_LinkedList {
 }
 
 class Node {
-    int data;
-    Node next;
+    public int data;
+    public Node next;
 
-    Node(int d) {
+    public Node(int d) {
         data = d;
         next = null;
     }
