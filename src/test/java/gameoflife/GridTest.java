@@ -1,6 +1,9 @@
 package gameoflife;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.anyBoolean;
 import static org.mockito.Matchers.anyInt;
@@ -11,7 +14,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.springframework.util.Assert;
 
 public class GridTest {
 
@@ -144,7 +146,7 @@ public class GridTest {
     @Test
     public void testSetStateGetState() {
         fixture.setState(0, 0, true);
-        Assert.isTrue(fixture.getState(0, 0), "Valid setState not saved");
+        assertThat("Valid setState not saved", fixture.getState(0, 0), is(equalTo(true)));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -198,17 +200,17 @@ public class GridTest {
     @Test
     public void testGetAliveNeighbourCount() {
 
-        Assert.isTrue(fixture.getAliveNeighbourCount(0, 0) == 2, "Alive Neighbour Count is incorrect. (0,0)");
-        Assert.isTrue(fixture.getAliveNeighbourCount(0, 1) == 1, "Alive Neighbour Count is incorrect. (0,1)");
-        Assert.isTrue(fixture.getAliveNeighbourCount(0, 2) == 2, "Alive Neighbour Count is incorrect. (0,2)");
+        assertThat("Alive Neighbour Count is incorrect. (0,0)", fixture.getAliveNeighbourCount(0, 0), is(equalTo(2)));
+        assertThat("Alive Neighbour Count is incorrect. (0,1)", fixture.getAliveNeighbourCount(0, 1), is(equalTo(1)));
+        assertThat("Alive Neighbour Count is incorrect. (0,2)", fixture.getAliveNeighbourCount(0, 2), is(equalTo(2)));
 
-        Assert.isTrue(fixture.getAliveNeighbourCount(1, 0) == 3, "Alive Neighbour Count is incorrect. (1,0)");
-        Assert.isTrue(fixture.getAliveNeighbourCount(1, 1) == 2, "Alive Neighbour Count is incorrect. (1,1)");
-        Assert.isTrue(fixture.getAliveNeighbourCount(1, 2) == 3, "Alive Neighbour Count is incorrect. (1,2)");
+        assertThat("Alive Neighbour Count is incorrect. (1,0)", fixture.getAliveNeighbourCount(1, 0), is(equalTo(3)));
+        assertThat("Alive Neighbour Count is incorrect. (1,1)", fixture.getAliveNeighbourCount(1, 1), is(equalTo(2)));
+        assertThat("Alive Neighbour Count is incorrect. (1,2)", fixture.getAliveNeighbourCount(1, 2), is(equalTo(3)));
 
-        Assert.isTrue(fixture.getAliveNeighbourCount(2, 0) == 2, "Alive Neighbour Count is incorrect. (2,0)");
-        Assert.isTrue(fixture.getAliveNeighbourCount(2, 1) == 1, "Alive Neighbour Count is incorrect. (2,1)");
-        Assert.isTrue(fixture.getAliveNeighbourCount(2, 2) == 2, "Alive Neighbour Count is incorrect. (2,2)");
+        assertThat("Alive Neighbour Count is incorrect. (2,0)", fixture.getAliveNeighbourCount(2, 0), is(equalTo(2)));
+        assertThat("Alive Neighbour Count is incorrect. (2,1)", fixture.getAliveNeighbourCount(2, 1), is(equalTo(1)));
+        assertThat("Alive Neighbour Count is incorrect. (2,2)", fixture.getAliveNeighbourCount(2, 2), is(equalTo(2)));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -238,17 +240,26 @@ public class GridTest {
     @Test
     public void testGetNextGenerationStateRule1() {
 
-        Assert.isTrue(fixture.getNextGenerationState(0, 0) == false, "Next Generation State is incorrect. (0,0)");
-        Assert.isTrue(fixture.getNextGenerationState(0, 1) == false, "Next Generation State is incorrect. (0,1)");
-        Assert.isTrue(fixture.getNextGenerationState(0, 2) == false, "Next Generation State is incorrect. (0,2)");
+        assertThat("Next Generation State is incorrect. (0,0)", fixture.getNextGenerationState(0, 0),
+                is(equalTo(false)));
+        assertThat("Next Generation State is incorrect. (0,1)", fixture.getNextGenerationState(0, 1),
+                is(equalTo(false)));
+        assertThat("Next Generation State is incorrect. (0,2)", fixture.getNextGenerationState(0, 2),
+                is(equalTo(false)));
 
-        Assert.isTrue(fixture.getNextGenerationState(1, 0) == true, "Next Generation State is incorrect. (1,0)");
-        Assert.isTrue(fixture.getNextGenerationState(1, 1) == true, "Next Generation State is incorrect. (1,1)");
-        Assert.isTrue(fixture.getNextGenerationState(1, 2) == true, "Next Generation State is incorrect. (1,2)");
+        assertThat("Next Generation State is incorrect. (1,0)", fixture.getNextGenerationState(1, 0),
+                is(equalTo(true)));
+        assertThat("Next Generation State is incorrect. (1,1)", fixture.getNextGenerationState(1, 1),
+                is(equalTo(true)));
+        assertThat("Next Generation State is incorrect. (1,2)", fixture.getNextGenerationState(1, 2),
+                is(equalTo(true)));
 
-        Assert.isTrue(fixture.getNextGenerationState(2, 0) == false, "Next Generation State is incorrect. (2,0)");
-        Assert.isTrue(fixture.getNextGenerationState(2, 1) == false, "Next Generation State is incorrect. (2,1)");
-        Assert.isTrue(fixture.getNextGenerationState(2, 2) == false, "Next Generation State is incorrect. (2,2)");
+        assertThat("Next Generation State is incorrect. (2,0)", fixture.getNextGenerationState(2, 0),
+                is(equalTo(false)));
+        assertThat("Next Generation State is incorrect. (2,1)", fixture.getNextGenerationState(2, 1),
+                is(equalTo(false)));
+        assertThat("Next Generation State is incorrect. (2,2)", fixture.getNextGenerationState(2, 2),
+                is(equalTo(false)));
     }
 
     @Test
@@ -267,12 +278,11 @@ public class GridTest {
 
         Grid exampleNextGeneration = example.nextGeneration();
 
-        Assert.isTrue(exampleNextGeneration.getState(0, 0) == true, "Invalid Next Generation State - (0,0)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 1) == true, "Invalid Next Generation State - (0,1)");
+        assertThat("Invalid Next Generation State - (0,0)", exampleNextGeneration.getState(0, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (0,1)", exampleNextGeneration.getState(0, 1), is(equalTo(true)));
 
-        Assert.isTrue(exampleNextGeneration.getState(1, 0) == true, "Invalid Next Generation State - (1,0)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 1) == true, "Invalid Next Generation State - (1,1)");
-
+        assertThat("Invalid Next Generation State - (1,0)", exampleNextGeneration.getState(1, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,1)", exampleNextGeneration.getState(1, 1), is(equalTo(true)));
     }
 
     @Test
@@ -297,17 +307,17 @@ public class GridTest {
 
         Grid exampleNextGeneration = example.nextGeneration();
 
-        Assert.isTrue(exampleNextGeneration.getState(0, 0) == true, "Invalid Next Generation State - (0,0)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 1) == true, "Invalid Next Generation State - (0,1)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 2) == false, "Invalid Next Generation State - (0,2)");
+        assertThat("Invalid Next Generation State - (0,0)", exampleNextGeneration.getState(0, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (0,1)", exampleNextGeneration.getState(0, 1), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (0,2)", exampleNextGeneration.getState(0, 2), is(equalTo(false)));
 
-        Assert.isTrue(exampleNextGeneration.getState(1, 0) == true, "Invalid Next Generation State - (1,0)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 1) == false, "Invalid Next Generation State - (1,1)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 2) == true, "Invalid Next Generation State - (1,2)");
+        assertThat("Invalid Next Generation State - (1,0)", exampleNextGeneration.getState(1, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,1)", exampleNextGeneration.getState(1, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (1,2)", exampleNextGeneration.getState(1, 2), is(equalTo(true)));
 
-        Assert.isTrue(exampleNextGeneration.getState(2, 0) == false, "Invalid Next Generation State - (2,0)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 1) == true, "Invalid Next Generation State - (2,1)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 2) == false, "Invalid Next Generation State - (2,2)");
+        assertThat("Invalid Next Generation State - (2,0)", exampleNextGeneration.getState(2, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (2,1)", exampleNextGeneration.getState(2, 1), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (2,2)", exampleNextGeneration.getState(2, 2), is(equalTo(false)));
     }
 
     @Test
@@ -332,17 +342,17 @@ public class GridTest {
 
         Grid exampleNextGeneration = example.nextGeneration();
 
-        Assert.isTrue(exampleNextGeneration.getState(0, 0) == false, "Invalid Next Generation State - (0,0)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 1) == false, "Invalid Next Generation State - (0,1)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 2) == false, "Invalid Next Generation State - (0,2)");
+        assertThat("Invalid Next Generation State - (0,0)", exampleNextGeneration.getState(0, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,1)", exampleNextGeneration.getState(0, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,2)", exampleNextGeneration.getState(0, 2), is(equalTo(false)));
 
-        Assert.isTrue(exampleNextGeneration.getState(1, 0) == true, "Invalid Next Generation State - (1,0)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 1) == true, "Invalid Next Generation State - (1,1)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 2) == true, "Invalid Next Generation State - (1,2)");
+        assertThat("Invalid Next Generation State - (1,0)", exampleNextGeneration.getState(1, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,1)", exampleNextGeneration.getState(1, 1), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,2)", exampleNextGeneration.getState(1, 2), is(equalTo(true)));
 
-        Assert.isTrue(exampleNextGeneration.getState(2, 0) == false, "Invalid Next Generation State - (2,0)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 1) == false, "Invalid Next Generation State - (2,1)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 2) == false, "Invalid Next Generation State - (2,2)");
+        assertThat("Invalid Next Generation State - (2,0)", exampleNextGeneration.getState(2, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (2,1)", exampleNextGeneration.getState(2, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (2,2)", exampleNextGeneration.getState(2, 2), is(equalTo(false)));
     }
 
     @Test
@@ -374,25 +384,25 @@ public class GridTest {
 
         Grid exampleNextGeneration = example.nextGeneration();
 
-        Assert.isTrue(exampleNextGeneration.getState(0, 0) == false, "Invalid Next Generation State - (0,0)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 1) == false, "Invalid Next Generation State - (0,1)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 2) == true, "Invalid Next Generation State - (0,2)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 3) == false, "Invalid Next Generation State - (0,3)");
+        assertThat("Invalid Next Generation State - (0,0)", exampleNextGeneration.getState(0, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,1)", exampleNextGeneration.getState(0, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,2)", exampleNextGeneration.getState(0, 2), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (0,3)", exampleNextGeneration.getState(0, 3), is(equalTo(false)));
 
-        Assert.isTrue(exampleNextGeneration.getState(1, 0) == true, "Invalid Next Generation State - (1,0)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 1) == false, "Invalid Next Generation State - (1,1)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 2) == false, "Invalid Next Generation State - (1,2)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 3) == true, "Invalid Next Generation State - (1,3)");
+        assertThat("Invalid Next Generation State - (1,0)", exampleNextGeneration.getState(1, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,1)", exampleNextGeneration.getState(1, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (1,2)", exampleNextGeneration.getState(1, 2), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (1,3)", exampleNextGeneration.getState(1, 3), is(equalTo(true)));
 
-        Assert.isTrue(exampleNextGeneration.getState(2, 0) == true, "Invalid Next Generation State - (2,0)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 1) == false, "Invalid Next Generation State - (2,1)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 2) == false, "Invalid Next Generation State - (2,2)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 3) == true, "Invalid Next Generation State - (2,3)");
+        assertThat("Invalid Next Generation State - (2,0)", exampleNextGeneration.getState(2, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (2,1)", exampleNextGeneration.getState(2, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (2,2)", exampleNextGeneration.getState(2, 2), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (2,3)", exampleNextGeneration.getState(2, 3), is(equalTo(true)));
 
-        Assert.isTrue(exampleNextGeneration.getState(3, 0) == false, "Invalid Next Generation State - (3,0)");
-        Assert.isTrue(exampleNextGeneration.getState(3, 1) == true, "Invalid Next Generation State - (3,1)");
-        Assert.isTrue(exampleNextGeneration.getState(3, 2) == false, "Invalid Next Generation State - (3,2)");
-        Assert.isTrue(exampleNextGeneration.getState(3, 3) == false, "Invalid Next Generation State - (3,3)");
+        assertThat("Invalid Next Generation State - (3,0)", exampleNextGeneration.getState(3, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (3,1)", exampleNextGeneration.getState(3, 1), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (3,2)", exampleNextGeneration.getState(3, 2), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (3,3)", exampleNextGeneration.getState(3, 3), is(equalTo(false)));
     }
 
     @Test
@@ -424,24 +434,24 @@ public class GridTest {
 
         Grid exampleNextGeneration = example.nextGeneration();
 
-        Assert.isTrue(exampleNextGeneration.getState(0, 0) == false, "Invalid Next Generation State - (0,0)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 1) == false, "Invalid Next Generation State - (0,1)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 2) == false, "Invalid Next Generation State - (0,2)");
-        Assert.isTrue(exampleNextGeneration.getState(0, 3) == false, "Invalid Next Generation State - (0,3)");
+        assertThat("Invalid Next Generation State - (0,0)", exampleNextGeneration.getState(0, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,1)", exampleNextGeneration.getState(0, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,2)", exampleNextGeneration.getState(0, 2), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (0,3)", exampleNextGeneration.getState(0, 3), is(equalTo(false)));
 
-        Assert.isTrue(exampleNextGeneration.getState(1, 0) == false, "Invalid Next Generation State - (1,0)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 1) == true, "Invalid Next Generation State - (1,1)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 2) == true, "Invalid Next Generation State - (1,2)");
-        Assert.isTrue(exampleNextGeneration.getState(1, 3) == true, "Invalid Next Generation State - (1,3)");
+        assertThat("Invalid Next Generation State - (1,0)", exampleNextGeneration.getState(1, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (1,1)", exampleNextGeneration.getState(1, 1), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,2)", exampleNextGeneration.getState(1, 2), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (1,3)", exampleNextGeneration.getState(1, 3), is(equalTo(true)));
 
-        Assert.isTrue(exampleNextGeneration.getState(2, 0) == true, "Invalid Next Generation State - (2,0)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 1) == true, "Invalid Next Generation State - (2,1)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 2) == true, "Invalid Next Generation State - (2,2)");
-        Assert.isTrue(exampleNextGeneration.getState(2, 3) == false, "Invalid Next Generation State - (2,3)");
+        assertThat("Invalid Next Generation State - (2,0)", exampleNextGeneration.getState(2, 0), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (2,1)", exampleNextGeneration.getState(2, 1), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (2,2)", exampleNextGeneration.getState(2, 2), is(equalTo(true)));
+        assertThat("Invalid Next Generation State - (2,3)", exampleNextGeneration.getState(2, 3), is(equalTo(false)));
 
-        Assert.isTrue(exampleNextGeneration.getState(3, 0) == false, "Invalid Next Generation State - (3,0)");
-        Assert.isTrue(exampleNextGeneration.getState(3, 1) == false, "Invalid Next Generation State - (3,1)");
-        Assert.isTrue(exampleNextGeneration.getState(3, 2) == false, "Invalid Next Generation State - (3,2)");
-        Assert.isTrue(exampleNextGeneration.getState(3, 3) == false, "Invalid Next Generation State - (3,3)");
+        assertThat("Invalid Next Generation State - (3,0)", exampleNextGeneration.getState(3, 0), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (3,1)", exampleNextGeneration.getState(3, 1), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (3,2)", exampleNextGeneration.getState(3, 2), is(equalTo(false)));
+        assertThat("Invalid Next Generation State - (3,3)", exampleNextGeneration.getState(3, 3), is(equalTo(false)));
     }
 }
