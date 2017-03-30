@@ -2,7 +2,8 @@ package hackerrank.java.oops;
 
 public class MethodOverridingSuperDemo {
     public static void main(String[] args) {
-        MotorCycle M = new MotorCycle();
+        MotorCycle m = new MotorCycle();
+        System.out.println(m);
     }
 }
 
