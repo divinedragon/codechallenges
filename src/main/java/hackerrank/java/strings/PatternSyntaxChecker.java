@@ -20,7 +20,7 @@ public class PatternSyntaxChecker {
             String pattern = in.nextLine();
 
             try {
-                Pattern p = Pattern.compile(pattern);
+                Pattern.compile(pattern);
                 System.out.println("Valid");
             } catch (PatternSyntaxException e) {
                 System.out.println("Invalid");
@@ -28,5 +28,7 @@ public class PatternSyntaxChecker {
 
             testCases--;
         }
+
+        in.close();
     }
 }
