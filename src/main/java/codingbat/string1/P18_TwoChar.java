@@ -8,8 +8,10 @@ public class P18_TwoChar {
             return "";
         }
 
-        int startIndex = (index > 0) ? index : 0;
-        startIndex = ((startIndex + 2) > str.length()) ? 0 : startIndex;
+        int startIndex = 0;
+        if (index > 0) {
+            startIndex = ((index + 2) > str.length()) ? 0 : index;
+        }
 
         return str.substring(startIndex, startIndex + 2);
     }
