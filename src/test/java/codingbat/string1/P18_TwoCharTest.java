@@ -81,7 +81,7 @@ public class P18_TwoCharTest {
         String str = "abc";
         int index = -1;
 
-        String expected = "";
+        String expected = "ab";
 
         String actual = fixture.twoChar(str, index);
 
@@ -94,6 +94,18 @@ public class P18_TwoCharTest {
         int index = 0;
 
         String expected = "";
+
+        String actual = fixture.twoChar(str, index);
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+    
+    @Test
+    public void shouldReturnEmptyWhenIndexIsOutOfRange() {
+        String str = "abcd";
+        int index = 6;
+
+        String expected = "ab";
 
         String actual = fixture.twoChar(str, index);
 
