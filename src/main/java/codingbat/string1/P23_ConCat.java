@@ -8,11 +8,9 @@ public class P23_ConCat {
         String aNormalized = Optional.ofNullable(a).orElse("");
         String bNormalized = Optional.ofNullable(b).orElse("");
 
-        if (aNormalized.length() > 0 && bNormalized.length() > 0) {
-
-            if (aNormalized.charAt(aNormalized.length() - 1) == bNormalized.charAt(0)) {
-                return aNormalized.substring(0, aNormalized.length() - 1) + bNormalized;
-            }
+        if (aNormalized.length() > 0 && bNormalized.length() > 0
+                && (aNormalized.charAt(aNormalized.length() - 1) == bNormalized.charAt(0))) {
+            return aNormalized.substring(0, aNormalized.length() - 1) + bNormalized;
         }
 
         return aNormalized + bNormalized;
