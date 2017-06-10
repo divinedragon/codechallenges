@@ -95,7 +95,7 @@ public class P04_CommonEndTest {
     }
 
     @Test
-    public void shouldReturnFalseWhenBothAreSingleElementAndSameValue() {
+    public void shouldReturnTrueWhenBothAreSingleElementAndSameValue() {
         int[] nums1 = new int[] { 1 };
         int[] nums2 = new int[] { 1 };
 
@@ -119,7 +119,7 @@ public class P04_CommonEndTest {
     }
 
     @Test
-    public void shouldReturnFalseWhenEndsAreSameValue() {
+    public void shouldReturnTrueWhenEndsAreSameValue() {
         int[] nums1 = new int[] { 1, 1 };
         int[] nums2 = new int[] { 2, 1 };
 
@@ -131,7 +131,7 @@ public class P04_CommonEndTest {
     }
 
     @Test
-    public void shouldReturnFalseWhenFirstAreSameValue() {
+    public void shouldReturnTrueWhenFirstAreSameValue() {
         int[] nums1 = new int[] { 1, 2 };
         int[] nums2 = new int[] { 1, 1 };
 
@@ -149,6 +149,24 @@ public class P04_CommonEndTest {
 
         int[] nums1_2 = new int[] { 2, 1 };
         int[] nums2_2 = new int[] { 1, 3 };
+
+        boolean expected1 = false;
+        boolean expected2 = false;
+
+        boolean actual1 = fixture.commonEnd(nums1_1, nums2_1);
+        boolean actual2 = fixture.commonEnd(nums1_2, nums2_2);
+
+        assertThat(actual1, is(equalTo(expected1)));
+        assertThat(actual2, is(equalTo(expected2)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenOneIsEmptyAndOtherIsNot() {
+        int[] nums1_1 = new int[] {};
+        int[] nums2_1 = new int[] { 3, 1 };
+
+        int[] nums1_2 = new int[] { 2, 1 };
+        int[] nums2_2 = new int[] {};
 
         boolean expected1 = false;
         boolean expected2 = false;
