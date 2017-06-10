@@ -64,7 +64,7 @@ public class P05_Sum3Test {
     }
 
     @Test
-    public void shouldReturnZeroWhenNumLengthIsLessThanEqualTo3() {
+    public void shouldReturnSumWhenNumLengthIsLessThanEqualTo3() {
         int[] nums1 = new int[] { 1 };
         int[] nums2 = new int[] { 1, 0 };
         int[] nums3 = new int[] { 1, 0, 0 };
@@ -81,7 +81,7 @@ public class P05_Sum3Test {
     }
 
     @Test
-    public void shouldReturnZeroWhenNumLengthIsGreaterThan3() {
+    public void shouldReturnSumWhenNumLengthIsGreaterThan3() {
         int[] nums = new int[] { 1, 0, 0, 2 };
 
         int expected = 1;
