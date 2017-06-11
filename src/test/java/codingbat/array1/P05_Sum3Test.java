@@ -85,7 +85,6 @@ public class P05_Sum3Test {
         int[] nums = new int[] { 1, 0, 0, 2 };
 
         int expected = 1;
-
         int actual = fixture.sum3(nums);
 
         assertThat(actual, is(equalTo(expected)));
