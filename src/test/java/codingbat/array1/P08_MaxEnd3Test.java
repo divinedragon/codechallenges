@@ -7,77 +7,77 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-public class P02_SameFirstLastTest {
+public class P08_MaxEnd3Test {
 
-    private P02_SameFirstLast fixture;
+    private P08_MaxEnd3 fixture;
 
     @Before
     public void setUp() {
-        fixture = new P02_SameFirstLast();
+        fixture = new P08_MaxEnd3();
     }
 
     @Test
     public void testcase1() {
         int[] nums = new int[] { 1, 2, 3 };
 
-        boolean expected = false;
+        int[] expected = new int[] { 3, 3, 3 };
 
-        boolean actual = fixture.sameFirstLast(nums);
+        int[] actual = fixture.maxEnd3(nums);
 
         assertThat(actual, is(equalTo(expected)));
     }
 
     @Test
     public void testcase2() {
-        int[] nums = new int[] { 1, 2, 3, 1 };
+        int[] nums = new int[] { 11, 5, 9 };
 
-        boolean expected = true;
+        int[] expected = new int[] { 11, 11, 11 };
 
-        boolean actual = fixture.sameFirstLast(nums);
+        int[] actual = fixture.maxEnd3(nums);
 
         assertThat(actual, is(equalTo(expected)));
     }
 
     @Test
     public void testcase3() {
-        int[] nums = new int[] { 1, 2, 1 };
+        int[] nums = new int[] { 2, 11, 3 };
 
-        boolean expected = true;
+        int[] expected = new int[] { 3, 3, 3 };
 
-        boolean actual = fixture.sameFirstLast(nums);
+        int[] actual = fixture.maxEnd3(nums);
 
         assertThat(actual, is(equalTo(expected)));
     }
 
     @Test
-    public void shouldReturnFalseWhenNumsIsNull() {
+    public void shouldReturnEmptyWhenNumIsNull() {
         int[] nums = null;
 
-        boolean expected = false;
+        int[] expected = new int[] {};
 
-        boolean actual = fixture.sameFirstLast(nums);
+        int[] actual = fixture.maxEnd3(nums);
 
         assertThat(actual, is(equalTo(expected)));
     }
 
     @Test
-    public void shouldReturnFalseWhenNumsIsEmpty() {
+    public void shouldReturnEmptyWhenNumIsEmpty() {
         int[] nums = new int[] {};
 
-        boolean expected = false;
+        int[] expected = new int[] {};
 
-        boolean actual = fixture.sameFirstLast(nums);
+        int[] actual = fixture.maxEnd3(nums);
 
         assertThat(actual, is(equalTo(expected)));
     }
 
     @Test
-    public void shouldReturnTrueWhenNumsIsSingleElement() {
+    public void shouldReturnEmptyWhenNumIsSingleElement() {
         int[] nums = new int[] { 1 };
 
-        boolean expected = true;
+        int[] expected = new int[] { 1 };
 
-        boolean actual = fixture.sameFirstLast(nums);
+        int[] actual = fixture.maxEnd3(nums);
 
         assertThat(actual, is(equalTo(expected)));
     }

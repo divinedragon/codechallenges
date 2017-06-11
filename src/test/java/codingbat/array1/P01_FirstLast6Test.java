@@ -72,7 +72,7 @@ public class P01_FirstLast6Test {
     }
 
     @Test
-    public void shouldReturnFalseWhenNumHasSingleElement6() {
+    public void shouldReturnTrueWhenNumHasSingleElement6() {
         int[] nums = new int[] { 6 };
 
         boolean expected = true;
