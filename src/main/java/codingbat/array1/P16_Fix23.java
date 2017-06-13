@@ -13,7 +13,10 @@ public class P16_Fix23 {
 
         final int[] result = numsNormalized.clone();
 
-        for (int i = 0, j = 1; i < result.length - 1; i++, j = i + 1) {
+        int i = 0;
+        int j = 1;
+
+        for (; i < result.length - 1;) {
 
             int current = result[i];
             int next = result[j];
@@ -22,6 +25,9 @@ public class P16_Fix23 {
                 result[j] = 0;
                 i++;
             }
+
+            i++;
+            j = i + 1;
         }
 
         return result;
