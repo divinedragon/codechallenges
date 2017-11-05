@@ -3,6 +3,12 @@ package codingbat.logic1;
 public class P02_DateFashion {
 
     public int dateFashion(int you, int date) {
-        return 0;
+        if (you <= 2 || date <= 2) {
+            return 0;
+        } else if (you >= 8 || date >= 8) {
+            return 2;
+        } else {
+            return 1;
+        }
     }
 }
