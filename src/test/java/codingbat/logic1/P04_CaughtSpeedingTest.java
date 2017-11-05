@@ -46,7 +46,7 @@ public class P04_CaughtSpeedingTest {
     public void shouldReturn1WhenSpeedIsInRangeAndNotBirthday() {
 
         final boolean isBirthday = false;
-        final int speed = 60;
+        final int speed = 61;
 
         final int expected = 1;
 
@@ -59,7 +59,7 @@ public class P04_CaughtSpeedingTest {
     public void shouldReturn1WhenSpeedIsInRangeAndBirthday() {
 
         final boolean isBirthday = true;
-        final int speed = 65;
+        final int speed = 66;
 
         final int expected = 1;
 
