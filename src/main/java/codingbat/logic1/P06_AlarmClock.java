@@ -10,13 +10,13 @@ public class P06_AlarmClock {
 
     public String alarmClock(final int day, final boolean vacation) {
         if (vacation) {
-            if (day >= 5) {
+            if (day == 6 || day == 0) {
                 return ALARM_OFF;
             } else {
                 return ALARM_10AM;
             }
         } else {
-            if (day >= 5) {
+            if (day == 6 || day == 0) {
                 return ALARM_10AM;
             } else {
                 return ALARM_7AM;

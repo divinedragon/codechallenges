@@ -19,14 +19,17 @@ public class P06_AlarmClockTest {
     @Test
     public void shouldReturnOffWhenVacationAndWeekend() {
 
-        final int day = 5;
+        final int day1 = 6;
+        final int day2 = 0;
         final boolean vacation = true;
 
         final String expected = P06_AlarmClock.ALARM_OFF;
 
-        final String actual = fixture.alarmClock(day, vacation);
+        final String actual1 = fixture.alarmClock(day1, vacation);
+        final String actual2 = fixture.alarmClock(day2, vacation);
 
-        assertThat(actual, is(equalTo(expected)));
+        assertThat(actual1, is(equalTo(expected)));
+        assertThat(actual2, is(equalTo(expected)));
     }
 
     @Test
@@ -45,14 +48,17 @@ public class P06_AlarmClockTest {
     @Test
     public void shouldReturnOffWhenNotVacationAndWeekend() {
 
-        final int day = 6;
+        final int day1 = 0;
+        final int day2 = 6;
         final boolean vacation = false;
 
         final String expected = P06_AlarmClock.ALARM_10AM;
 
-        final String actual = fixture.alarmClock(day, vacation);
+        final String actual1 = fixture.alarmClock(day1, vacation);
+        final String actual2 = fixture.alarmClock(day2, vacation);
 
-        assertThat(actual, is(equalTo(expected)));
+        assertThat(actual1, is(equalTo(expected)));
+        assertThat(actual2, is(equalTo(expected)));
     }
 
     @Test
