@@ -2,11 +2,11 @@ package codingbat.logic1;
 
 public class P06_AlarmClock {
 
-    static final String ALARM_OFF = "off";
+    public static final String ALARM_OFF = "off";
 
-    static final String ALARM_7AM = "7:00";
+    public static final String ALARM_7AM = "7:00";
 
-    static final String ALARM_10AM = "10:00";
+    public static final String ALARM_10AM = "10:00";
 
     public String alarmClock(final int day, final boolean vacation) {
         if (vacation) {
